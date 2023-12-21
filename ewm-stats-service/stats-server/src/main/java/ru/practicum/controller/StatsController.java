@@ -3,6 +3,7 @@ package ru.practicum.controller;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import ru.practicum.dto.EndpointHit;
@@ -33,6 +34,7 @@ public class StatsController {
      * @return user request data with assigned id and information about saving time
      */
     @PostMapping(HIT_PATH)
+    @ResponseStatus(HttpStatus.CREATED)
     public EndpointHit saveRequestData(@Valid @RequestBody EndpointHit requestData) {
         log.info("Save information about user request: {}", requestData);
         return service.saveRequestData(requestData);

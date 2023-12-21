@@ -11,6 +11,7 @@ import ru.practicum.repository.StatsRepository;
 import ru.practicum.utils.logger.ListLogger;
 import ru.practicum.utils.mapper.HitMapper;
 
+import javax.validation.ValidationException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -18,6 +19,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+
+import static ru.practicum.utils.constants.Constants.START_AFTER_END;
+
 
 /**
  * STATISTICS SERVICE IMPLEMENTATION
@@ -57,6 +61,9 @@ public class StatsServiceImpl implements StatsService {
     @Transactional(readOnly = true)
     public List<ViewStats> getStatistics(LocalDateTime start, LocalDateTime end, List<String> uris, Boolean unique) {
 
+        if (start != null && end != null & start.isAfter(end)) {
+            throw new ValidationException(START_AFTER_END);
+        }
         List<Hit> hits = findHits(start, end, uris);
 
         List<ViewStats> stats = new ArrayList<>();
