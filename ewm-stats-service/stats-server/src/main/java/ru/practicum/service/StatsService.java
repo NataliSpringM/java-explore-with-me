@@ -4,6 +4,7 @@ import org.springframework.stereotype.Component;
 import ru.practicum.dto.EndpointHit;
 import ru.practicum.dto.ViewStats;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -31,5 +32,5 @@ public interface StatsService {
      * @param unique: should only unique visits be taken into account (only with a unique ip), default value: false
      * @return list of users requests, met specified criteria
      */
-    List<ViewStats> getStatistics(String start, String end, List<String> uris, Boolean unique);
+    List<ViewStats> getStatistics(LocalDateTime start, LocalDateTime end, List<String> uris, Boolean unique);
 }

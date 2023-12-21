@@ -1,5 +1,6 @@
 package ru.practicum.client;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.HttpStatus;
@@ -11,6 +12,7 @@ import ru.practicum.utils.BaseClient;
 import ru.practicum.dto.EndpointHit;
 import ru.practicum.utils.PathConstructor;
 
+import java.util.List;
 import java.util.Map;
 
 
@@ -20,6 +22,7 @@ import static ru.practicum.utils.Constants.*;
  * creation HTTP-requests to stats-server
  */
 @Service
+@Slf4j
 public class StatsClient extends BaseClient {
     @Autowired
     public StatsClient(@Value("${ewm-stats-server.url}") String serverUrl, RestTemplateBuilder builder) {
@@ -46,14 +49,13 @@ public class StatsClient extends BaseClient {
     /**
      * create GET-request to "/stats" endpoint
      */
-    public ResponseEntity<Object> getStatistics(String start, String end, String uris, Boolean unique) {
+    public ResponseEntity<Object> getStatistics(String start, String end, List<String> uris, Boolean unique) {
         Map<String, Object> parameters = Map.of(
                 START_PARAMETER_NAME, start,
                 END_PARAMETER_NAME, end,
-                URIS_PARAMETER_NAME, uris,
                 UNIQUE_PARAMETER_NAME, unique
-
         );
+        log.info("We send GET-Request to StatsController with {}, {}, {}, {}:", start, end, uris, unique);
         String parameterPATH = PathConstructor.getParameterPath(start, end, uris, unique);
         return get(STATS_PATH + parameterPATH, parameters);
     }

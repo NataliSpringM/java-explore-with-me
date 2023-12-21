@@ -7,16 +7,17 @@ import org.springframework.transaction.annotation.Transactional;
 import ru.practicum.dto.EndpointHit;
 import ru.practicum.dto.ViewStats;
 import ru.practicum.entities.Hit;
-import ru.practicum.utils.mapper.HitMapper;
 import ru.practicum.repository.StatsRepository;
 import ru.practicum.utils.logger.ListLogger;
+import ru.practicum.utils.mapper.HitMapper;
 
 import java.time.LocalDateTime;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
-
-import static ru.practicum.utils.constants.Constants.DATE_TIME_FORMATTER;
 
 /**
  * STATISTICS SERVICE IMPLEMENTATION
@@ -46,26 +47,28 @@ public class StatsServiceImpl implements StatsService {
     /**
      * Get info about users requests to the uri of a specific service.
      *
-     * @param startString : date and time of the start of the range for which statistics need to be downloaded
-     * @param endString:  date and time of the start of the range for which statistics need to be downloaded
-     * @param uris:       list of uri for which statistics need to be downloaded
-     * @param unique:     should only unique visits be taken into account (only with a unique ip), default value: false
+     * @param start:  date and time of the start of the range for which statistics need to be downloaded
+     * @param end:    date and time of the start of the range for which statistics need to be downloaded
+     * @param uris:   list of uri for which statistics need to be downloaded
+     * @param unique: should only unique visits be taken into account (only with a unique ip), default value: false
      * @return list of users requests, met specified criteria, containing number of views
      */
     @Override
     @Transactional(readOnly = true)
-    public List<ViewStats> getStatistics(String startString, String endString, List<String> uris, Boolean unique) {
+    public List<ViewStats> getStatistics(LocalDateTime start, LocalDateTime end, List<String> uris, Boolean unique) {
 
-        List<Hit> hits = findHits(startString, endString, uris);
+        List<Hit> hits = findHits(start, end, uris);
 
         List<ViewStats> stats = new ArrayList<>();
 
         if (!hits.isEmpty()) {
             if (Boolean.TRUE.equals(unique)) {
                 hits = retainUniqueIpHits(hits);
+                ListLogger.logResultList(hits);
             }
             stats = mapAndSortList(hits, uris);
         }
+
         ListLogger.logResultList(stats);
         return stats;
     }
@@ -73,15 +76,12 @@ public class StatsServiceImpl implements StatsService {
     /**
      * find user requests in repository
      *
-     * @param startString : date and time of the start of the range for which statistics need to be downloaded
-     * @param endString:  date and time of the start of the range for which statistics need to be downloaded
-     * @param uris:       list of uri for which statistics need to be downloaded
+     * @param start : date and time of the start of the range for which statistics need to be downloaded
+     * @param end:  date and time of the start of the range for which statistics need to be downloaded
+     * @param uris: list of uri for which statistics need to be downloaded
      * @return list of users requests, met specified criteria
      */
-    private List<Hit> findHits(String startString, String endString, List<String> uris) {
-
-        LocalDateTime start = LocalDateTime.parse(startString, DATE_TIME_FORMATTER);
-        LocalDateTime end = LocalDateTime.parse(endString, DATE_TIME_FORMATTER);
+    private List<Hit> findHits(LocalDateTime start, LocalDateTime end, List<String> uris) {
 
         if (uris == null) {
             return repository.findAllByTimestampBetween(start, end);
@@ -114,7 +114,7 @@ public class StatsServiceImpl implements StatsService {
         Comparator<ViewStats> viewDesc = Comparator.comparing(ViewStats::getHits).reversed();
 
         if (uris != null) {
-            Map<String, Integer> uriViews = countUrisViews(hits);
+            Map<String, Long> uriViews = countUrisViews(hits);
             return hits.stream()
                     .map(hit -> new ViewStats(hit.getApp(), hit.getUri(), uriViews.get(hit.getUri())))
                     .distinct()
@@ -122,7 +122,7 @@ public class StatsServiceImpl implements StatsService {
                     .collect(Collectors.toList());
         }
 
-        Integer views = hits.size();
+        Long views = Long.valueOf(hits.size());
         return hits.stream()
                 .map(hit -> new ViewStats(hit.getApp(), hit.getUri(), views))
                 .sorted(viewDesc)
@@ -135,8 +135,8 @@ public class StatsServiceImpl implements StatsService {
      * @param hits list of Hit objects
      * @return map with number of the views by uri
      */
-    private Map<String, Integer> countUrisViews(List<Hit> hits) {
+    private Map<String, Long> countUrisViews(List<Hit> hits) {
         return hits.stream()
-                .collect(Collectors.groupingBy((Hit::getUri), Collectors.summingInt(h -> 1)));
+                .collect(Collectors.groupingBy((Hit::getUri), Collectors.summingLong(h -> 1)));
     }
 }

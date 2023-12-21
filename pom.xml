@@ -22,24 +22,36 @@
 		<module>ewm-stats-service</module>
 	</modules>
 
+	<properties>
+		<spring.version>3.0.4</spring.version>
+		<query.dsl.version>5.0.0</query.dsl.version>
+	</properties>
+
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-actuator</artifactId>
-				<version>3.0.4</version>
+				<version>${spring.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-web</artifactId>
-				<version>3.0.4</version>
+				<version>${spring.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>ru.practicum</groupId>
 				<artifactId>dto</artifactId>
 				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.querydsl</groupId>
+				<artifactId>querydsl-jpa</artifactId>
+				<version>${querydsl.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
