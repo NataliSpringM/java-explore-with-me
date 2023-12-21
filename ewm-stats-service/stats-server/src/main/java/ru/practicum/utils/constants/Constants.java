@@ -13,7 +13,7 @@ public class Constants {
 
     public static final String HIT_PATH = "/hit";
     public static final String STATS_PATH = "/stats";
-    public static final String CONTROLLERS_PATH = "ru.practicum.controllers";
+    public static final String CONTROLLER_PATH = "ru.practicum.controller";
 
     /**
      * Parameters' names and default values constants

@@ -11,10 +11,10 @@ import org.springframework.web.method.annotation.MethodArgumentTypeMismatchExcep
 import javax.validation.ValidationException;
 import java.time.LocalDateTime;
 
-import static ru.practicum.utils.constants.Constants.CONTROLLERS_PATH;
+import static ru.practicum.utils.constants.Constants.CONTROLLER_PATH;
 import static ru.practicum.utils.constants.Constants.INCORRECTLY_MADE_REQUEST;
 
-@RestControllerAdvice(CONTROLLERS_PATH)
+@RestControllerAdvice(CONTROLLER_PATH)
 @Slf4j
 public class ErrorHandler {
 
