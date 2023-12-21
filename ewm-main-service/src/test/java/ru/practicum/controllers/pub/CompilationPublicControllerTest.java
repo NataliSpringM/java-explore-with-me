@@ -203,8 +203,8 @@ public class CompilationPublicControllerTest {
                         is(compilationDto3.getId()), Integer.class))
                 .andExpect(jsonPath("$.[2].title",
                         is(compilationDto3.getTitle()), String.class))
-                .andExpect(jsonPath("$.[2].pinned"
-                        , is(compilationDto3.getPinned()), Boolean.class))
+                .andExpect(jsonPath("$.[2].pinned",
+                        is(compilationDto3.getPinned()), Boolean.class))
                 .andReturn()
                 .getResponse()
                 .getContentAsString();
@@ -366,8 +366,8 @@ public class CompilationPublicControllerTest {
                         is(compilationDto3.getId()), Integer.class))
                 .andExpect(jsonPath("$.[2].title",
                         is(compilationDto3.getTitle()), String.class))
-                .andExpect(jsonPath("$.[2].pinned"
-                        , is(compilationDto3.getPinned()), Boolean.class))
+                .andExpect(jsonPath("$.[2].pinned",
+                        is(compilationDto3.getPinned()), Boolean.class))
                 .andReturn()
                 .getResponse()
                 .getContentAsString();

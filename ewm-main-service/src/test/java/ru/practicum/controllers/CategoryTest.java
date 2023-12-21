@@ -259,8 +259,8 @@ public class CategoryTest {
 
         //get all objects and check properties
 
-        List<CategoryDto> list = categoryPublicController.
-                getCategories(Integer.valueOf(ZERO_DEFAULT_VALUE), Integer.valueOf(TEN_DEFAULT_VALUE));
+        List<CategoryDto> list = categoryPublicController
+                .getCategories(Integer.valueOf(ZERO_DEFAULT_VALUE), Integer.valueOf(TEN_DEFAULT_VALUE));
         assertThat(list).asList().hasSize(2)
                 .hasOnlyElementsOfType(CategoryDto.class)
                 .startsWith(categoryConcert)
