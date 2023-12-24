@@ -2,6 +2,8 @@ package ru.practicum.utils;
 
 import lombok.experimental.UtilityClass;
 
+import java.util.List;
+
 import static ru.practicum.utils.Constants.*;
 
 @UtilityClass
@@ -11,14 +13,18 @@ public class PathConstructor {
      *
      * @return path with list of parameters as name=value pairs
      */
-    public static String getParameterPath(String start, String end, String uris, Boolean unique) {
+    public static String getParameterPath(String start, String end, List<String> uris, Boolean unique) {
+        StringBuilder urisString = new StringBuilder();
+        for (String uri : uris) {
+            urisString.append(constructParamPair(URIS_PARAMETER_NAME, uri)).append("&");
+        }
+
         return "?"
                 + constructParamPair(START_PARAMETER_NAME, start)
                 + "&"
                 + constructParamPair(END_PARAMETER_NAME, end)
                 + "&"
-                + constructParamPair(URIS_PARAMETER_NAME, uris)
-                + "&"
+                + urisString
                 + constructParamPair(UNIQUE_PARAMETER_NAME, unique);
     }
 

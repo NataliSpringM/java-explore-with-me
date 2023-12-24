@@ -1,8 +1,6 @@
 package ru.practicum.dto;
 
-import lombok.Builder;
-import lombok.RequiredArgsConstructor;
-import lombok.Value;
+import lombok.*;
 
 /**
  * ViewStats DTO. Obtaining visitor statistics data
@@ -10,13 +8,14 @@ import lombok.Value;
  * String uri : URI for which the request was made
  * Integer hits : number of views
  */
-@Value
+@Data
 @Builder(toBuilder = true)
-@RequiredArgsConstructor
+@NoArgsConstructor
+@AllArgsConstructor
 public class ViewStats {
 
     String app;
     String uri;
-    Integer hits;
+    Long hits;
 
 }

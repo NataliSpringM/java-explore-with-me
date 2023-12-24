@@ -124,25 +124,25 @@ public class StatsServerTest {
         controller.saveRequestData(hit4);
 
         List<ViewStats> stats = controller.getStatistics(
-                time2020.format(DATE_TIME_FORMATTER), time2025.format(DATE_TIME_FORMATTER), null, null);
+                time2020, time2025, null, null);
 
         assertThat(stats).asList().hasSize(4);
         assertThat(stats.get(0))
                 .hasFieldOrPropertyWithValue("app", app)
                 .hasFieldOrPropertyWithValue("uri", uriEvents)
-                .hasFieldOrPropertyWithValue("hits", 4);
+                .hasFieldOrPropertyWithValue("hits", 4L);
         assertThat(stats.get(1))
                 .hasFieldOrPropertyWithValue("app", app)
                 .hasFieldOrPropertyWithValue("uri", uriEventsId)
-                .hasFieldOrPropertyWithValue("hits", 4);
+                .hasFieldOrPropertyWithValue("hits", 4L);
         assertThat(stats.get(2))
                 .hasFieldOrPropertyWithValue("app", app)
                 .hasFieldOrPropertyWithValue("uri", uriEvents)
-                .hasFieldOrPropertyWithValue("hits", 4);
+                .hasFieldOrPropertyWithValue("hits", 4L);
         assertThat(stats.get(2))
                 .hasFieldOrPropertyWithValue("app", app)
                 .hasFieldOrPropertyWithValue("uri", uriEvents)
-                .hasFieldOrPropertyWithValue("hits", 4);
+                .hasFieldOrPropertyWithValue("hits", 4L);
     }
 
     /**
@@ -157,8 +157,7 @@ public class StatsServerTest {
         controller.saveRequestData(hit4);
 
         List<ViewStats> stats = controller.getStatistics(
-                time2050.format(DATE_TIME_FORMATTER), time2050.format(DATE_TIME_FORMATTER),
-                null, null);
+                time2050, time2050, null, null);
 
         assertThat(stats).asList().isEmpty();
     }
@@ -177,28 +176,28 @@ public class StatsServerTest {
         List<String> uris = List.of(uriEvents, uriEventsId);
 
         List<ViewStats> stats = controller.getStatistics(
-                time2020.format(DATE_TIME_FORMATTER), time2025.format(DATE_TIME_FORMATTER), uris, null);
+                time2020, time2025, uris, null);
         assertThat(stats).asList().hasSize(2);
 
         assertThat(stats.get(0))
                 .hasFieldOrPropertyWithValue("app", app)
                 .hasFieldOrPropertyWithValue("uri", uriEvents)
-                .hasFieldOrPropertyWithValue("hits", 3);
+                .hasFieldOrPropertyWithValue("hits", 3L);
         assertThat(stats.get(1))
                 .hasFieldOrPropertyWithValue("app", app)
                 .hasFieldOrPropertyWithValue("uri", uriEventsId)
-                .hasFieldOrPropertyWithValue("hits", 1);
+                .hasFieldOrPropertyWithValue("hits", 1L);
 
         List<String> uris2 = List.of(uriEventsId);
 
         List<ViewStats> stats2 = controller.getStatistics(
-                time2020.format(DATE_TIME_FORMATTER), time2025.format(DATE_TIME_FORMATTER), uris2, null);
+                time2020, time2025, uris2, null);
 
         assertThat(stats2).asList().hasSize(1);
         assertThat(stats2.get(0))
                 .hasFieldOrPropertyWithValue("app", app)
                 .hasFieldOrPropertyWithValue("uri", uriEventsId)
-                .hasFieldOrPropertyWithValue("hits", 1);
+                .hasFieldOrPropertyWithValue("hits", 1L);
 
     }
 
@@ -216,7 +215,7 @@ public class StatsServerTest {
         List<String> uris = Arrays.asList(uriEvents, uriEventsId);
 
         List<ViewStats> statsByTimeAndUniqueTrue = controller.getStatistics(
-                time2020.format(DATE_TIME_FORMATTER), time2025.format(DATE_TIME_FORMATTER), uris, true);
+                time2020, time2025, uris, true);
 
         assertThat(statsByTimeAndUniqueTrue).asList().hasSize(1);
     }
@@ -233,7 +232,7 @@ public class StatsServerTest {
         controller.saveRequestData(hit4);
 
         List<ViewStats> statsByTimeAndUniqueTrue = controller.getStatistics(
-                time2020.format(DATE_TIME_FORMATTER), time2025.format(DATE_TIME_FORMATTER), null, true);
+                time2020, time2025, null, true);
         assertThat(statsByTimeAndUniqueTrue).asList().hasSize(1);
     }
 }
