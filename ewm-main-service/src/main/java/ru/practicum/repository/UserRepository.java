@@ -22,4 +22,12 @@ public interface UserRepository extends JpaRepository<User, Long> {
      * @return list of users
      */
     List<User> findAllByIdIn(List<Long> ids, Pageable page);
+
+    /**
+     * find users sorted by rating with paging
+     *
+     * @param pageable paging parameters
+     * @return list of users
+     */
+    List<User> findAllByOrderByRatingDesc(Pageable pageable);
 }

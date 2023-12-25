@@ -3,6 +3,7 @@ package ru.practicum.utils.validation;
 import lombok.experimental.UtilityClass;
 import lombok.extern.slf4j.Slf4j;
 import ru.practicum.enums.EventState;
+import ru.practicum.enums.RatingAction;
 import ru.practicum.enums.SortType;
 import ru.practicum.enums.StateAction;
 
@@ -72,7 +73,7 @@ public class EnumTypeValidation {
     }
 
     /**
-     * check wheter string is valid SortType
+     * check whether string is valid SortType
      * throw exception if it is not
      *
      * @param sort String to check
@@ -84,5 +85,20 @@ public class EnumTypeValidation {
                 .filter(value -> value.name().equalsIgnoreCase(sort))
                 .findAny()
                 .orElseThrow(() -> new IllegalArgumentException(UNKNOWN_SORT_TYPE + sort));
+    }
+
+    /**
+     * check whether string is valid RatingAction
+     * throw exception if it is not
+     *
+     * @param rating String to check
+     * @return RatingAction corresponding item
+     */
+
+    public static RatingAction getValidRatingAction(String rating) {
+        return Arrays.stream(RatingAction.values())
+                .filter(value -> value.name().equalsIgnoreCase(rating))
+                .findAny()
+                .orElseThrow(() -> new IllegalArgumentException(UNKNOWN_RATING_ACTION + rating));
     }
 }

@@ -13,6 +13,7 @@ public class Constants {
     public static final String CATEGORIES_PATH = "/categories";
     public static final String COMPILATIONS_PATH = "/compilations";
     public static final String EVENTS_PATH = "/events";
+    public static final String RATINGS_PATH = "/ratings";
     public static final String REQUESTS_PATH = "/requests";
     public static final String USERS_PATH = "/users";
 
@@ -23,6 +24,7 @@ public class Constants {
     public static final String CATEGORY_ID_PATH_VARIABLE = "/{catId}";
     public static final String COMPILATION_ID_PATH_VARIABLE = "/{compId}";
     public static final String EVENT_ID_PATH_VARIABLE = "/{eventId}";
+    public static final String INITIATOR_ID_PATH_VARIABLE = "/{initiatorId}";
     public static final String REQUEST_ID_PATH_VARIABLE = "/{requestId}";
     public static final String USER_ID_PATH_VARIABLE = "/{userId}";
 

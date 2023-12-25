@@ -19,6 +19,17 @@ import java.util.List;
 public interface EventService {
 
     /**
+     * Get events for public sorted by rating with paging options.
+     *
+     * @param from number of elements that need to be skipped to form the current page, default value = 10
+     * @param size number of elements per page, default value = 10
+     * @return List of events met filtering criteria.
+     * If no events are found by the specified filters, returns an empty list
+     */
+    List<EventFullDto> getEventsByRating(Integer from, Integer size);
+
+
+    /**
      * Get events for public with filtering options.
      * Only published events should appear in the results
      * Text search (by annotation and detailed description) should be case-insensitive

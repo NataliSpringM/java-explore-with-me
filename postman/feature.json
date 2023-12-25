@@ -1,0 +1,2345 @@
+{
+  "info": {
+    "_postman_id": "3f4e7377-eec3-40dd-a9cb-ae696885394e",
+    "name": "RATING_FEAT",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "2036415"
+  },
+  "item": [
+
+    {
+      "name": "RATE EVENTS",
+      "item": [
+        {
+          "name": "CREATE LIKE EVENT RESPONSE user 2, event 1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/events/:eventId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "events",
+                ":eventId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "2"
+                },
+                {
+                  "key": "eventId",
+                  "value": "1"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "like"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "4ХХ FAIL CREATE LIKE user 2, event 1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 4ХХ\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([400,404,409]);",
+                  "});",
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/events/:eventId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "events",
+                ":eventId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "2"
+                },
+                {
+                  "key": "eventId",
+                  "value": "1"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "like"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "4ХХ FAIL CREATE DISLIKE user 2, event 1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 4ХХ\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([400,404,409]);",
+                  "});",
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/events/:eventId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "events",
+                ":eventId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "2"
+                },
+                {
+                  "key": "eventId",
+                  "value": "1"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "dislike"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CREATE DISLIKE EVENT RESPONSE user 1, event 2",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/events/:eventId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "events",
+                ":eventId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "1"
+                },
+                {
+                  "key": "eventId",
+                  "value": "2"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "dislike"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "4ХХ FAIL CREATE DISLIKE user 2, event 1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 4ХХ\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([400,404,409]);",
+                  "});",
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/events/:eventId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "events",
+                ":eventId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "2"
+                },
+                {
+                  "key": "eventId",
+                  "value": "1"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "dislike"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "4ХХ FAIL CREATE LIKE user 2, event 1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 4ХХ\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([400,404,409]);",
+                  "});",
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/events/:eventId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "events",
+                ":eventId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "2"
+                },
+                {
+                  "key": "eventId",
+                  "value": "1"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "like"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "400 FAIL CREATE INVALID USER PATH VARIABLE LIKE, event 2",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 400\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([400]);",
+                  "});",
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/events/:eventId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "events",
+                ":eventId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "userId"
+                },
+                {
+                  "key": "eventId",
+                  "value": "2"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "like"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "400 FAIL CREATE INVALID EVENT PATH VARIABLE LIKE, event 2",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 400\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([400]);",
+                  "});",
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/events/:eventId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "events",
+                ":eventId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "2"
+                },
+                {
+                  "key": "eventId",
+                  "value": "eventId"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "like"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "400 FAIL CREATE INVALID ENUM TYPE LIKE OR DISLIKE, user 2, event 1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 400\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([400]);",
+                  "});",
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/events/:eventId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "events",
+                ":eventId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "2"
+                },
+                {
+                  "key": "eventId",
+                  "value": "eventId"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "INVALID"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "404 FAIL CREATE NOT FOUND USER LIKE user 100000, event 2",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 404\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([404]);",
+                  "});",
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/events/:eventId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "events",
+                ":eventId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "100000"
+                },
+                {
+                  "key": "eventId",
+                  "value": "2"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "like"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "404 FAIL CREATE NOT FOUND EVENT LIKE user 2, event 100000",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 404\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([404]);",
+                  "});",
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/events/:eventId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "events",
+                ":eventId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "2"
+                },
+                {
+                  "key": "eventId",
+                  "value": "100000"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "like"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "400 FAIL DELETE INVALID USER PATH VARIABLE LIKE event 1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 400\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([400]);",
+                  "});",
+                  "pm.test(\"Has rating delete response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/events/:eventId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "events",
+                ":eventId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "userId"
+                },
+                {
+                  "key": "eventId",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "400 FAIL DELETE INVALID EVENT PATH VARIABLE LIKE user 2",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 400\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([400]);",
+                  "});",
+                  "pm.test(\"Has rating delete response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/events/:eventId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "events",
+                ":eventId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "1"
+                },
+                {
+                  "key": "eventId",
+                  "value": "eventId"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "404 FAIL DELETE NOT FOUND USER LIKE event 1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 404\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([404]);",
+                  "});",
+                  "pm.test(\"Has rating delete response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/events/:eventId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "events",
+                ":eventId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "100000"
+                },
+                {
+                  "key": "eventId",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "404 FAIL DELETE NOT FOUND EVENT LIKE user 2",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 404\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([404]);",
+                  "});",
+                  "pm.test(\"Has rating delete response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/events/:eventId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "events",
+                ":eventId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "2"
+                },
+                {
+                  "key": "eventId",
+                  "value": "100000"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "RATE INITIATORS",
+      "item": [
+        {
+          "name": "CREATE LIKE INITIATOR RESPONSE user 2, initiator 1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/users/:initiatorId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "users",
+                ":initiatorId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "2"
+                },
+                {
+                  "key": "initiatorId",
+                  "value": "1"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "like"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "4ХХ FAIL CREATE LIKE user 2, initiator 1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 4ХХ\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([400,404,409]);",
+                  "});",
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/users/:initiatorId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "users",
+                ":initiatorId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "2"
+                },
+                {
+                  "key": "initiatorId",
+                  "value": "1"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "like"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "4ХХ FAIL CREATE DISLIKE user 2, initiator 1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 4ХХ\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([400,404,409]);",
+                  "});",
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/users/:initiatorId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "users",
+                ":initiatorId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "2"
+                },
+                {
+                  "key": "initiatorId",
+                  "value": "1"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "like"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CREATE DISLIKE RESPONSE user 4, initiator 1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/users/:initiatorId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "users",
+                ":initiatorId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "4"
+                },
+                {
+                  "key": "initiatorId",
+                  "value": "1"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "dislike"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "4ХХ FAIL CREATE DISLIKE user 4, initiator 1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 4ХХ\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([400,404,409]);",
+                  "});",
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/users/:initiatorId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "users",
+                ":initiatorId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "4"
+                },
+                {
+                  "key": "initiatorId",
+                  "value": "1"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "like"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "4ХХ FAIL CREATE LIKE user 4, initiator 1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 4ХХ\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([400,404,409]);",
+                  "});",
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/users/:initiatorId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "users",
+                ":initiatorId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "4"
+                },
+                {
+                  "key": "initiatorId",
+                  "value": "1"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "like"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "400 FAIL CREATE INVALID USER PATH VARIABLE LIKE, initiator 1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 400\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([400]);",
+                  "});",
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/users/:initiatorId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "users",
+                ":initiatorId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "userId"
+                },
+                {
+                  "key": "initiatorId",
+                  "value": "1"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "like"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "400 FAIL CREATE INVALID INITIATOR PATH VARIABLE LIKE, user 2",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 400\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([400]);",
+                  "});",
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/users/:initiatorId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "users",
+                ":initiatorId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "2"
+                },
+                {
+                  "key": "initiatorId",
+                  "value": "initiatorId"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "like"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "400 FAIL CREATE INVALID ENUM TYPE LIKE OR DISLIKE, user 2, initiator 1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 400\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([400]);",
+                  "});",
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/users/:initiatorId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "users",
+                ":initiatorId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "2"
+                },
+                {
+                  "key": "initiatorId",
+                  "value": "initiatorId"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "INVALID"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "404 FAIL CREATE NOT FOUND USER LIKE user 100000, initiator 1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 404\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([404]);",
+                  "});",
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/users/:initiatorId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "users",
+                ":initiatorId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "100000"
+                },
+                {
+                  "key": "initiatorId",
+                  "value": "1"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "like"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "404 FAIL CREATE NOT FOUND EVENT LIKE user 2, initiator 100000",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 404\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([404]);",
+                  "});",
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/users/:initiatorId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "users",
+                ":initiatorId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "2"
+                },
+                {
+                  "key": "initiatorId",
+                  "value": "100000"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "like"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "400 FAIL DELETE INVALID USER PATH VARIABLE LIKE initiator 1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 400\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([400]);",
+                  "});",
+                  "pm.test(\"Has rating delete response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/users/:initiatorId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "users",
+                ":initiatorId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "userId"
+                },
+                {
+                  "key": "initiatorId",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "400 FAIL DELETE INVALID INITIATOR PATH VARIABLE LIKE user 2",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 400\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([400]);",
+                  "});",
+                  "pm.test(\"Has rating delete response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/users/:initiatorId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "users",
+                ":initiatorId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "1"
+                },
+                {
+                  "key": "initiatorId",
+                  "value": "initiatorId"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "404 FAIL DELETE NOT FOUND USER LIKE initiator 1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 404\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([404]);",
+                  "});",
+                  "pm.test(\"Has rating delete response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/users/:initiatorId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "users",
+                ":initiatorId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "100000"
+                },
+                {
+                  "key": "initiatorId",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "404 FAIL DELETE NOT FOUND EVENT LIKE user 2",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 404\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([404]);",
+                  "});",
+                  "pm.test(\"Has rating delete response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/users/:initiatorId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "users",
+                ":initiatorId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "2"
+                },
+                {
+                  "key": "initiatorId",
+                  "value": "100000"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "404 FAIL DELETE NOT FOUND RATING LIKE user 5",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 404\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([404]);",
+                  "});",
+                  "pm.test(\"Has rating delete response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/users/:initiatorId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "users",
+                ":initiatorId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "5"
+                },
+                {
+                  "key": "initiatorId",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "GET EVENT WITH RATING",
+      "item": [
+        {
+          "name": "EVENT 1 GET HAS RATING FIELD",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.be.ok;",
+                  "});",
+                  "pm.test(\"Has event update response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "pm.test(\"Test event 'id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('id');",
+                  "    pm.expect(jsonData.id, '\"id\" must be 1').to.eql(1);",
+                  "});",
+                  "pm.test(\"Test event 'annotation' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('annotation');",
+                  "});",
+                  "pm.test(\"Test event 'category.id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('category');",
+                  "    pm.expect(jsonData.category).to.have.property('id');",
+                  "});",
+                  "pm.test(\"Test event 'category.name' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('category');",
+                  "    pm.expect(jsonData.category).to.have.property('name');",
+                  "});",
+                  "pm.test(\"Test event 'description' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('description');",
+                  "});",
+                  "pm.test(\"Test event 'eventDate' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('eventDate');",
+                  "});",
+                  "pm.test(\"Test event 'location.lat' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('location');",
+                  "    pm.expect(jsonData.location).to.have.property('lat');",
+                  "});",
+                  "pm.test(\"Test event 'location.lon' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('location');",
+                  "    pm.expect(jsonData.location).to.have.property('lon');",
+                  "});",
+                  "pm.test(\"Test event 'title' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('title');",
+                  "});",
+                  "pm.test(\"Test event 'rating' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('rating');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/users/:userId/events/:eventId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users",
+                ":userId",
+                "events",
+                ":eventId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "1"
+                },
+                {
+                  "key": "eventId",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "GET SORTED PUBLISHED EVENTS WITH RATING",
+      "item": [
+        {
+          "name": "GET SORTED EVENTS RESPONSE",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.be.ok;",
+                  "});",
+                  "pm.test(\"Test list sorted events response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "    var jsonData = pm.response.json();",
+                  "});",
+                  "",
+                  "pm.test(\"Test events[0] 'rating' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData[0]).to.have.property('rating');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/ratings/events",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                "events"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "GET USERS WITH RATING",
+      "item": [
+        {
+          "name": "GET USERS HAVE RATING",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.be.ok;",
+                  "});",
+                  "pm.test(\"Test list users response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "    var jsonData = pm.response.json();",
+                  "});",
+                  "",
+                  "pm.test(\"Test user[0] 'id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData[0]).to.have.property('id');",
+                  "});",
+                  "pm.test(\"Test user[0] 'rating' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData[0]).to.have.property('rating');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/admin/users",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "admin",
+                "users"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "GET SORTED USERS WITH RATING",
+      "item": [
+        {
+          "name": "GET USERS RESPONSE",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.be.ok;",
+                  "});",
+                  "pm.test(\"Test list users response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "    var jsonData = pm.response.json();",
+                  "});",
+                  "",
+                  "pm.test(\"Test user[0] 'id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData[0]).to.have.property('id');",
+                  "});",
+                  "pm.test(\"Test user[0] 'name' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData[0]).to.have.property('name');",
+                  "});",
+                  "pm.test(\"Test user[0] 'rating' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData[0]).to.have.property('rating');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/ratings/users",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                "users"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    }
+  ]
+}
+
+
+
+
+

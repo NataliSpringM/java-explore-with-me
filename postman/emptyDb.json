@@ -1,0 +1,5158 @@
+{
+  "info": {
+    "_postman_id": "3f4e7377-eec3-40dd-a9cb-ae696885394e",
+    "name": "Rating_events",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "2036415"
+  },
+  "item": [
+    {
+      "name": "users",
+      "item": [
+        {
+          "name": "USER 1 Initiator Alex create",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200,201]);",
+                  "});",
+                  "pm.test(\"Has user create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "pm.test(\"Test user 'id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('id');",
+                  "    pm.expect(jsonData.id, '\"id\" must be 1').to.eql(1);",
+                  "});",
+                  "pm.test(\"Test user 'email' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('email');",
+                  "    pm.expect(jsonData.email, '\"email\" must be \"Alex@yandex.ru\"').to.eql('Alex@yandex.ru');",
+                  "});",
+                  "pm.test(\"Test user 'name' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('name');",
+                  "    pm.expect(jsonData.name, '\"name\" must be \"ALEX\"').to.eql('ALEX');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"ALEX\",\n    \"email\": \"Alex@yandex.ru\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/admin/users",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "admin/users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "USER 2 Participant Egor create",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([201]);",
+                  "});",
+                  "pm.test(\"Has user create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "pm.test(\"Test user 'id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('id');",
+                  "    pm.expect(jsonData.id, '\"id\" must be 2').to.eql(2);",
+                  "});",
+                  "pm.test(\"Test user 'email' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('email');",
+                  "    pm.expect(jsonData.email, '\"email\" must be \"Egor@yandex.ru\"').to.eql('Egor@yandex.ru');",
+                  "});",
+                  "pm.test(\"Test user 'name' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('name');",
+                  "    pm.expect(jsonData.name, '\"name\" must be \"Egor\"').to.eql('Egor');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Egor\",\n    \"email\": \"Egor@yandex.ru\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/admin/users",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "admin/users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "USER 3 Participant Anna create",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([201]);",
+                  "});",
+                  "pm.test(\"Has user create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "pm.test(\"Test user 'id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('id');",
+                  "    pm.expect(jsonData.id, '\"id\" must be 3').to.eql(3);",
+                  "});",
+                  "pm.test(\"Test user 'email' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('email');",
+                  "    pm.expect(jsonData.email, '\"email\" must be \"Anna@yandex.ru\"').to.eql('Anna@yandex.ru');",
+                  "});",
+                  "pm.test(\"Test user 'name' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('name');",
+                  "    pm.expect(jsonData.name, '\"name\" must be \"Anna\"').to.eql('Anna');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Anna\",\n    \"email\": \"Anna@yandex.ru\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/admin/users",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "admin/users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "USER 4 Participant Olga create",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([201]);",
+                  "});",
+                  "pm.test(\"Has user create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "pm.test(\"Test user 'id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('id');",
+                  "    pm.expect(jsonData.id, '\"id\" must be 4').to.eql(4);",
+                  "});",
+                  "pm.test(\"Test user 'email' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('email');",
+                  "    pm.expect(jsonData.email, '\"email\" must be \"Olga@yandex.ru\"').to.eql('Olga@yandex.ru');",
+                  "});",
+                  "pm.test(\"Test user 'name' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('name');",
+                  "    pm.expect(jsonData.name, '\"name\" must be \"Olga\"').to.eql('Olga');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Olga\",\n    \"email\": \"Olga@yandex.ru\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/admin/users",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "admin/users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "USER 5 Not Participant User create",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([201]);",
+                  "});",
+                  "pm.test(\"Has user create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "pm.test(\"Test user 'id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('id');",
+                  "    pm.expect(jsonData.id, '\"id\" must be 5').to.eql(5);",
+                  "});",
+                  "pm.test(\"Test user 'email' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('email');",
+                  "    pm.expect(jsonData.email, '\"email\" must be \"user@yandex.ru\"').to.eql('user@yandex.ru');",
+                  "});",
+                  "pm.test(\"Test user 'name' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('name');",
+                  "    pm.expect(jsonData.name, '\"name\" must be \"user\"').to.eql('user');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"user\",\n    \"email\": \"user@yandex.ru\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/admin/users",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "admin/users"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "categories",
+      "item": [
+        {
+          "name": "CATEGORY 1 create",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([201]);",
+                  "});",
+                  "pm.test(\"Has category create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "pm.test(\"Test category 'id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('id');",
+                  "    pm.expect(jsonData.id, '\"id\" must be 1').to.eql(1);",
+                  "});",
+                  "pm.test(\"Test category 'name' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('name');",
+                  "    pm.expect(jsonData.name, '\"name\" must be \"Festival\"').to.eql('Festival');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Festival\"\n  }"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/admin/categories",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "admin/categories"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "events",
+      "item": [
+        {
+          "name": "EVENT 1 create",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([201]);",
+                  "});",
+                  "pm.test(\"Has event create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "pm.test(\"Test event 'id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('id');",
+                  "    pm.expect(jsonData.id, '\"id\" must be 1').to.eql(1);",
+                  "});",
+                  "pm.test(\"Test event 'annotation' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('annotation');",
+                  "    pm.expect(jsonData.annotation, '\"annotation\" must be \"This is a valid annotation\"').to.eql('This is a valid annotation');",
+                  "});",
+                  "pm.test(\"Test event 'category.id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('category');",
+                  "    pm.expect(jsonData.category).to.have.property('id');",
+                  "    pm.expect(jsonData.category.id, '\"category.id\" must be 1').to.eql(1);",
+                  "});",
+                  "pm.test(\"Test event 'category.name' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('category');",
+                  "    pm.expect(jsonData.category).to.have.property('name');",
+                  "    pm.expect(jsonData.category.name, '\"category.name\" must be \"Festival\"').to.eql('Festival');",
+                  "});",
+                  "pm.test(\"Test event 'description' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('description');",
+                  "    pm.expect(jsonData.description, '\"description\" must be \"This is a valid description\"').to.eql('This is a valid description');",
+                  "});",
+                  "pm.test(\"Test event 'eventDate' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('eventDate');",
+                  "    pm.expect(jsonData.eventDate, '\"eventDate\" must be \"' + pm.environment.get('time1') + '\"').to.eql(pm.environment.get('time1'));",
+                  "});",
+                  "pm.test(\"Test event 'location.lat' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('location');",
+                  "    pm.expect(jsonData.location).to.have.property('lat');",
+                  "    pm.expect(jsonData.location.lat, '\"location.lat\" must be 33.33').to.eql(33.33);",
+                  "});",
+                  "pm.test(\"Test event 'location.lon' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('location');",
+                  "    pm.expect(jsonData.location).to.have.property('lon');",
+                  "    pm.expect(jsonData.location.lon, '\"location.lon\" must be 77.77').to.eql(77.77);",
+                  "});",
+                  "pm.test(\"Test event 'title' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('title');",
+                  "    pm.expect(jsonData.title, '\"title\" must be \"title\"').to.eql('title');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  "var moment = require('moment');\r",
+                  "\r",
+                  "var time = moment().add(1, 'd');\r",
+                  "pm.environment.set('time1', time.format('YYYY-MM-DD HH:mm:ss'));\r",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n \"annotation\": \"This is a valid annotation\",\n  \"category\": \"1\",\n \"location\":\n {\"lat\": \"33.33\",\n \"lon\": \"77.77\"\n},\n \"eventDate\": \"{{time1}}\",\n \"description\": \"This is a valid description\",\n \"title\":\"title\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/users/:userId/events",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users",
+                ":userId",
+                "events"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "EVENT 2 create",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([201]);",
+                  "});",
+                  "pm.test(\"Has event create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "pm.test(\"Test event 'id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('id');",
+                  "    pm.expect(jsonData.id, '\"id\" must be 2').to.eql(2);",
+                  "});",
+                  "pm.test(\"Test event 'annotation' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('annotation');",
+                  "    pm.expect(jsonData.annotation, '\"annotation\" must be \"This is a valid annotation2\"').to.eql('This is a valid annotation2');",
+                  "});",
+                  "pm.test(\"Test event 'category.id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('category');",
+                  "    pm.expect(jsonData.category).to.have.property('id');",
+                  "    pm.expect(jsonData.category.id, '\"category.id\" must be 1').to.eql(1);",
+                  "});",
+                  "pm.test(\"Test event 'category.name' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('category');",
+                  "    pm.expect(jsonData.category).to.have.property('name');",
+                  "    pm.expect(jsonData.category.name, '\"category.name\" must be \"Festival\"').to.eql('Festival');",
+                  "});",
+                  "pm.test(\"Test event 'description' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('description');",
+                  "    pm.expect(jsonData.description, '\"description\" must be \"This is a valid description2\"').to.eql('This is a valid description2');",
+                  "});",
+                  "pm.test(\"Test event 'eventDate' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('eventDate');",
+                  "    pm.expect(jsonData.eventDate, '\"eventDate\" must be \"' + pm.environment.get('time2') + '\"').to.eql(pm.environment.get('time2'));",
+                  "});",
+                  "pm.test(\"Test event 'location.lat' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('location');",
+                  "    pm.expect(jsonData.location).to.have.property('lat');",
+                  "    pm.expect(jsonData.location.lat, '\"location.lat\" must be 33.33').to.eql(33.33);",
+                  "});",
+                  "pm.test(\"Test event 'location.lon' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('location');",
+                  "    pm.expect(jsonData.location).to.have.property('lon');",
+                  "    pm.expect(jsonData.location.lon, '\"location.lon\" must be 77.77').to.eql(77.77);",
+                  "});",
+                  "pm.test(\"Test event 'title' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('title');",
+                  "    pm.expect(jsonData.title, '\"title\" must be \"title2\"').to.eql('title2');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  "var moment = require('moment');\r",
+                  "\r",
+                  "var time = moment().add(2, 'd');\r",
+                  "pm.environment.set('time2', time.format('YYYY-MM-DD HH:mm:ss'));\r",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n \"annotation\": \"This is a valid annotation2\",\n  \"category\": \"1\",\n \"location\":\n {\"lat\": \"33.33\",\n \"lon\": \"77.77\"\n},\n \"eventDate\": \"{{time2}}\",\n \"description\": \"This is a valid description2\",\n \"title\":\"title2\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/users/:userId/events",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users",
+                ":userId",
+                "events"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "EVENT 3 create",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([201]);",
+                  "});",
+                  "pm.test(\"Has event create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "pm.test(\"Test event 'id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('id');",
+                  "    pm.expect(jsonData.id, '\"id\" must be 3').to.eql(3);",
+                  "});",
+                  "pm.test(\"Test event 'annotation' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('annotation');",
+                  "    pm.expect(jsonData.annotation, '\"annotation\" must be \"This is a valid annotation3\"').to.eql('This is a valid annotation3');",
+                  "});",
+                  "pm.test(\"Test event 'category.id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('category');",
+                  "    pm.expect(jsonData.category).to.have.property('id');",
+                  "    pm.expect(jsonData.category.id, '\"category.id\" must be 1').to.eql(1);",
+                  "});",
+                  "pm.test(\"Test event 'category.name' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('category');",
+                  "    pm.expect(jsonData.category).to.have.property('name');",
+                  "    pm.expect(jsonData.category.name, '\"category.name\" must be \"Festival\"').to.eql('Festival');",
+                  "});",
+                  "pm.test(\"Test event 'description' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('description');",
+                  "    pm.expect(jsonData.description, '\"description\" must be \"This is a valid description3\"').to.eql('This is a valid description3');",
+                  "});",
+                  "pm.test(\"Test event 'eventDate' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('eventDate');",
+                  "    pm.expect(jsonData.eventDate, '\"eventDate\" must be \"' + pm.environment.get('time3') + '\"').to.eql(pm.environment.get('time3'));",
+                  "});",
+                  "pm.test(\"Test event 'location.lat' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('location');",
+                  "    pm.expect(jsonData.location).to.have.property('lat');",
+                  "    pm.expect(jsonData.location.lat, '\"location.lat\" must be 33.33').to.eql(33.33);",
+                  "});",
+                  "pm.test(\"Test event 'location.lon' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('location');",
+                  "    pm.expect(jsonData.location).to.have.property('lon');",
+                  "    pm.expect(jsonData.location.lon, '\"location.lon\" must be 77.77').to.eql(77.77);",
+                  "});",
+                  "pm.test(\"Test event 'title' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('title');",
+                  "    pm.expect(jsonData.title, '\"title\" must be \"title\"').to.eql('title3');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  "var moment = require('moment');\r",
+                  "\r",
+                  "var time = moment().add(3, 'd');\r",
+                  "pm.environment.set('time3', time.format('YYYY-MM-DD HH:mm:ss'));\r",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n \"annotation\": \"This is a valid annotation3\",\n  \"category\": \"1\",\n \"location\":\n {\"lat\": \"33.33\",\n \"lon\": \"77.77\"\n},\n \"eventDate\": \"{{time3}}\",\n \"description\": \"This is a valid description3\",\n \"title\":\"title3\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/users/:userId/events",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users",
+                ":userId",
+                "events"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "EVENT 4 create",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([201]);",
+                  "});",
+                  "pm.test(\"Has event create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "pm.test(\"Test event 'id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('id');",
+                  "    pm.expect(jsonData.id, '\"id\" must be 4').to.eql(4);",
+                  "});",
+                  "pm.test(\"Test event 'annotation' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('annotation');",
+                  "    pm.expect(jsonData.annotation, '\"annotation\" must be \"This is a valid annotation4\"').to.eql('This is a valid annotation4');",
+                  "});",
+                  "pm.test(\"Test event 'category.id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('category');",
+                  "    pm.expect(jsonData.category).to.have.property('id');",
+                  "    pm.expect(jsonData.category.id, '\"category.id\" must be 1').to.eql(1);",
+                  "});",
+                  "pm.test(\"Test event 'category.name' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('category');",
+                  "    pm.expect(jsonData.category).to.have.property('name');",
+                  "    pm.expect(jsonData.category.name, '\"category.name\" must be \"Festival\"').to.eql('Festival');",
+                  "});",
+                  "pm.test(\"Test event 'description' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('description');",
+                  "    pm.expect(jsonData.description, '\"description\" must be \"This is a valid description4\"').to.eql('This is a valid description4');",
+                  "});",
+                  "pm.test(\"Test event 'eventDate' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('eventDate');",
+                  "    pm.expect(jsonData.eventDate, '\"eventDate\" must be \"' + pm.environment.get('time4') + '\"').to.eql(pm.environment.get('time4'));",
+                  "});",
+                  "pm.test(\"Test event 'location.lat' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('location');",
+                  "    pm.expect(jsonData.location).to.have.property('lat');",
+                  "    pm.expect(jsonData.location.lat, '\"location.lat\" must be 33.33').to.eql(33.33);",
+                  "});",
+                  "pm.test(\"Test event 'location.lon' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('location');",
+                  "    pm.expect(jsonData.location).to.have.property('lon');",
+                  "    pm.expect(jsonData.location.lon, '\"location.lon\" must be 77.77').to.eql(77.77);",
+                  "});",
+                  "pm.test(\"Test event 'title' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('title');",
+                  "    pm.expect(jsonData.title, '\"title\" must be \"title\"').to.eql('title4');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  "var moment = require('moment');\r",
+                  "\r",
+                  "var time = moment().add(4, 'd');\r",
+                  "pm.environment.set('time4', time.format('YYYY-MM-DD HH:mm:ss'));\r",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n \"annotation\": \"This is a valid annotation4\",\n  \"category\": \"1\",\n \"location\":\n {\"lat\": \"33.33\",\n \"lon\": \"77.77\"\n},\n \"eventDate\": \"{{time4}}\",\n \"description\": \"This is a valid description4\",\n \"title\":\"title4\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/users/:userId/events",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users",
+                ":userId",
+                "events"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "EVENT 1 publish",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200]);",
+                  "});",
+                  "pm.test(\"Has event publish response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "pm.test(\"Test event 'id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('id');",
+                  "    pm.expect(jsonData.id, '\"id\" must be 1').to.eql(1);",
+                  "});",
+                  "pm.test(\"Test event 'annotation' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('annotation');",
+                  "    pm.expect(jsonData.annotation, '\"annotation\" must be \"This is a valid annotation\"').to.eql('This is a valid annotation');",
+                  "});",
+                  "pm.test(\"Test event 'category.id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('category');",
+                  "    pm.expect(jsonData.category).to.have.property('id');",
+                  "    pm.expect(jsonData.category.id, '\"category.id\" must be 1').to.eql(1);",
+                  "});",
+                  "pm.test(\"Test event 'category.name' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('category');",
+                  "    pm.expect(jsonData.category).to.have.property('name');",
+                  "    pm.expect(jsonData.category.name, '\"category.name\" must be \"Festival\"').to.eql('Festival');",
+                  "});",
+                  "pm.test(\"Test event 'description' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('description');",
+                  "    pm.expect(jsonData.description, '\"description\" must be \"This is a valid description\"').to.eql('This is a valid description');",
+                  "});",
+                  "pm.test(\"Test event 'eventDate' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('eventDate');",
+                  "    pm.expect(jsonData.eventDate, '\"eventDate\" must be \"' + pm.environment.get('time1') + '\"').to.eql(pm.environment.get('time1'));",
+                  "});",
+                  "pm.test(\"Test event 'location.lat' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('location');",
+                  "    pm.expect(jsonData.location).to.have.property('lat');",
+                  "    pm.expect(jsonData.location.lat, '\"location.lat\" must be 33.33').to.eql(33.33);",
+                  "});",
+                  "pm.test(\"Test event 'location.lon' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('location');",
+                  "    pm.expect(jsonData.location).to.have.property('lon');",
+                  "    pm.expect(jsonData.location.lon, '\"location.lon\" must be 77.77').to.eql(77.77);",
+                  "});",
+                  "pm.test(\"Test event 'title' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('title');",
+                  "    pm.expect(jsonData.title, '\"title\" must be \"title\"').to.eql('title');",
+                  "});",
+                  "pm.test(\"Test event 'state' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('state');",
+                  "    pm.expect(jsonData.state, '\"state\" must be \"PUBLISHED\"').to.eql('PUBLISHED');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n \"stateAction\": \"PUBLISH_EVENT\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/admin/events/:eventId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "admin",
+                "events",
+                ":eventId"
+              ],
+              "variable": [
+                {
+                  "key": "eventId",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "EVENT 2 publish",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200]);",
+                  "});",
+                  "pm.test(\"Has event publish response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "pm.test(\"Test event 'id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('id');",
+                  "    pm.expect(jsonData.id, '\"id\" must be 2').to.eql(2);",
+                  "});",
+                  "pm.test(\"Test event 'annotation' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('annotation');",
+                  "    pm.expect(jsonData.annotation, '\"annotation\" must be \"This is a valid annotation2\"').to.eql('This is a valid annotation2');",
+                  "});",
+                  "pm.test(\"Test event 'category.id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('category');",
+                  "    pm.expect(jsonData.category).to.have.property('id');",
+                  "    pm.expect(jsonData.category.id, '\"category.id\" must be 1').to.eql(1);",
+                  "});",
+                  "pm.test(\"Test event 'category.name' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('category');",
+                  "    pm.expect(jsonData.category).to.have.property('name');",
+                  "    pm.expect(jsonData.category.name, '\"category.name\" must be \"Festival\"').to.eql('Festival');",
+                  "});",
+                  "pm.test(\"Test event 'description' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('description');",
+                  "    pm.expect(jsonData.description, '\"description\" must be \"This is a valid description2\"').to.eql('This is a valid description2');",
+                  "});",
+                  "pm.test(\"Test event 'eventDate' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('eventDate');",
+                  "    pm.expect(jsonData.eventDate, '\"eventDate\" must be \"' + pm.environment.get('time2') + '\"').to.eql(pm.environment.get('time2'));",
+                  "});",
+                  "pm.test(\"Test event 'location.lat' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('location');",
+                  "    pm.expect(jsonData.location).to.have.property('lat');",
+                  "    pm.expect(jsonData.location.lat, '\"location.lat\" must be 33.33').to.eql(33.33);",
+                  "});",
+                  "pm.test(\"Test event 'location.lon' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('location');",
+                  "    pm.expect(jsonData.location).to.have.property('lon');",
+                  "    pm.expect(jsonData.location.lon, '\"location.lon\" must be 77.77').to.eql(77.77);",
+                  "});",
+                  "pm.test(\"Test event 'title' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('title');",
+                  "    pm.expect(jsonData.title, '\"title\" must be \"title2\"').to.eql('title2');",
+                  "});",
+                  "pm.test(\"Test event 'state' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('state');",
+                  "    pm.expect(jsonData.state, '\"state\" must be \"PUBLISHED\"').to.eql('PUBLISHED');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n \"stateAction\": \"PUBLISH_EVENT\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/admin/events/:eventId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "admin",
+                "events",
+                ":eventId"
+              ],
+              "variable": [
+                {
+                  "key": "eventId",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "EVENT 3 publish",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200]);",
+                  "});",
+                  "pm.test(\"Has event publish response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "pm.test(\"Test event 'id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('id');",
+                  "    pm.expect(jsonData.id, '\"id\" must be 3').to.eql(3);",
+                  "});",
+                  "pm.test(\"Test event 'annotation' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('annotation');",
+                  "    pm.expect(jsonData.annotation, '\"annotation\" must be \"This is a valid annotation3\"').to.eql('This is a valid annotation3');",
+                  "});",
+                  "pm.test(\"Test event 'category.id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('category');",
+                  "    pm.expect(jsonData.category).to.have.property('id');",
+                  "    pm.expect(jsonData.category.id, '\"category.id\" must be 1').to.eql(1);",
+                  "});",
+                  "pm.test(\"Test event 'category.name' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('category');",
+                  "    pm.expect(jsonData.category).to.have.property('name');",
+                  "    pm.expect(jsonData.category.name, '\"category.name\" must be \"Festival\"').to.eql('Festival');",
+                  "});",
+                  "pm.test(\"Test event 'description' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('description');",
+                  "    pm.expect(jsonData.description, '\"description\" must be \"This is a valid description3\"').to.eql('This is a valid description3');",
+                  "});",
+                  "pm.test(\"Test event 'eventDate' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('eventDate');",
+                  "    pm.expect(jsonData.eventDate, '\"eventDate\" must be \"' + pm.environment.get('time3') + '\"').to.eql(pm.environment.get('time3'));",
+                  "});",
+                  "pm.test(\"Test event 'location.lat' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('location');",
+                  "    pm.expect(jsonData.location).to.have.property('lat');",
+                  "    pm.expect(jsonData.location.lat, '\"location.lat\" must be 33.33').to.eql(33.33);",
+                  "});",
+                  "pm.test(\"Test event 'location.lon' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('location');",
+                  "    pm.expect(jsonData.location).to.have.property('lon');",
+                  "    pm.expect(jsonData.location.lon, '\"location.lon\" must be 77.77').to.eql(77.77);",
+                  "});",
+                  "pm.test(\"Test event 'title' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('title');",
+                  "    pm.expect(jsonData.title, '\"title\" must be \"title3\"').to.eql('title3');",
+                  "});",
+                  "pm.test(\"Test event 'state' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('state');",
+                  "    pm.expect(jsonData.state, '\"state\" must be \"PUBLISHED\"').to.eql('PUBLISHED');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n \"stateAction\": \"PUBLISH_EVENT\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/admin/events/:eventId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "admin",
+                "events",
+                ":eventId"
+              ],
+              "variable": [
+                {
+                  "key": "eventId",
+                  "value": "3"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "requests",
+      "item": [
+        {
+          "name": "REQUEST 1 create from USER 2 for EVENT 1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([201]);",
+                  "});",
+                  "pm.test(\"Has request create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "pm.test(\"Test request 'id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('id');",
+                  "    pm.expect(jsonData.id, '\"id\" must be 1').to.eql(1);",
+                  "});",
+                  "pm.test(\"Test request 'request' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('event');",
+                  "    pm.expect(jsonData.event, '\"event\" must be 1').to.eql(1);",
+                  "});",
+                  "pm.test(\"Test request 'created' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('created');",
+                  "});",
+                  "pm.test(\"Test request 'requester' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('requester');",
+                  "    pm.expect(jsonData.requester, '\"requester\" must be 2').to.eql(2);",
+                  "});",
+                  "pm.test(\"Test request 'status' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('status');",
+                  "    pm.expect(jsonData.status, '\"status\" must be \"CONFIRMED\"').to.eql('CONFIRMED');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/users/:userId/requests",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users",
+                ":userId",
+                "requests"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "2"
+                }
+              ],
+              "query": [
+                {
+                  "key": "eventId",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "REQUEST 2 create from USER 3 for EVENT 1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([201]);",
+                  "});",
+                  "pm.test(\"Has request create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "pm.test(\"Test request 'id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('id');",
+                  "    pm.expect(jsonData.id, '\"id\" must be 2').to.eql(2);",
+                  "});",
+                  "pm.test(\"Test request 'request' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('event');",
+                  "    pm.expect(jsonData.event, '\"event\" must be 1').to.eql(1);",
+                  "});",
+                  "pm.test(\"Test request 'created' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('created');",
+                  "});",
+                  "pm.test(\"Test request 'requester' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('requester');",
+                  "    pm.expect(jsonData.requester, '\"requester\" must be 3').to.eql(3);",
+                  "});",
+                  "pm.test(\"Test request 'status' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('status');",
+                  "    pm.expect(jsonData.status, '\"status\" must be \"CONFIRMED\"').to.eql('CONFIRMED');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/users/:userId/requests",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users",
+                ":userId",
+                "requests"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "3"
+                }
+              ],
+              "query": [
+                {
+                  "key": "eventId",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "REQUEST 3 create from USER 4 for EVENT 1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([201]);",
+                  "});",
+                  "pm.test(\"Has request create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "pm.test(\"Test request 'id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('id');",
+                  "    pm.expect(jsonData.id, '\"id\" must be 3').to.eql(3);",
+                  "});",
+                  "pm.test(\"Test request 'request' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('event');",
+                  "    pm.expect(jsonData.event, '\"event\" must be 1').to.eql(1);",
+                  "});",
+                  "pm.test(\"Test request 'created' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('created');",
+                  "});",
+                  "pm.test(\"Test request 'requester' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('requester');",
+                  "    pm.expect(jsonData.requester, '\"requester\" must be 4').to.eql(4);",
+                  "});",
+                  "pm.test(\"Test request 'status' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('status');",
+                  "    pm.expect(jsonData.status, '\"status\" must be \"CONFIRMED\"').to.eql('CONFIRMED');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/users/:userId/requests",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users",
+                ":userId",
+                "requests"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "4"
+                }
+              ],
+              "query": [
+                {
+                  "key": "eventId",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "REQUEST 4 create from USER 4 for EVENT 2",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([201]);",
+                  "});",
+                  "pm.test(\"Has request create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "pm.test(\"Test request 'id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('id');",
+                  "    pm.expect(jsonData.id, '\"id\" must be 4').to.eql(4);",
+                  "});",
+                  "pm.test(\"Test request 'request' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('event');",
+                  "    pm.expect(jsonData.event, '\"event\" must be 2').to.eql(2);",
+                  "});",
+                  "pm.test(\"Test request 'created' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('created');",
+                  "});",
+                  "pm.test(\"Test request 'requester' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('requester');",
+                  "    pm.expect(jsonData.requester, '\"requester\" must be 4').to.eql(4);",
+                  "});",
+                  "pm.test(\"Test request 'status' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('status');",
+                  "    pm.expect(jsonData.status, '\"status\" must be \"CONFIRMED\"').to.eql('CONFIRMED');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/users/:userId/requests",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users",
+                ":userId",
+                "requests"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "4"
+                }
+              ],
+              "query": [
+                {
+                  "key": "eventId",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "REQUEST 5 create from USER 4 for EVENT 3",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([201]);",
+                  "});",
+                  "pm.test(\"Has request create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "pm.test(\"Test request 'id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('id');",
+                  "    pm.expect(jsonData.id, '\"id\" must be 5').to.eql(5);",
+                  "});",
+                  "pm.test(\"Test request 'request' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('event');",
+                  "    pm.expect(jsonData.event, '\"event\" must be 3').to.eql(3);",
+                  "});",
+                  "pm.test(\"Test request 'created' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('created');",
+                  "});",
+                  "pm.test(\"Test request 'requester' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('requester');",
+                  "    pm.expect(jsonData.requester, '\"requester\" must be 4').to.eql(4);",
+                  "});",
+                  "pm.test(\"Test request 'status' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('status');",
+                  "    pm.expect(jsonData.status, '\"status\" must be \"CONFIRMED\"').to.eql('CONFIRMED');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/users/:userId/requests",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users",
+                ":userId",
+                "requests"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "4"
+                }
+              ],
+              "query": [
+                {
+                  "key": "eventId",
+                  "value": "3"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "RATE EVENTS",
+      "item": [
+        {
+          "name": "201 CREATE LIKE user 2, event 1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([201]);",
+                  "});",
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "pm.test(\"Test rating 'id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('id');",
+                  "    pm.expect(jsonData.id, '\"id\" must be 1').to.eql(1);",
+                  "});",
+                  "pm.test(\"Test rating 'userId' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('userId');",
+                  "    pm.expect(jsonData.userId, '\"userId\" must be 2').to.eql(2);",
+                  "});",
+                  "pm.test(\"Test rating 'eventId' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('eventId');",
+                  "    pm.expect(jsonData.eventId, '\"eventId\" must be 1').to.eql(1);",
+                  "});",
+                  "pm.test(\"Test rating 'eventLike' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('eventLike');",
+                  "    pm.expect(jsonData.eventLike, '\"rating.eventLike\" must be true').to.eql(true);",
+                  "});",
+                  "pm.test(\"Test rating 'initiatorLike' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('initiatorLike');",
+                  "    pm.expect(jsonData.initiatorLike, '\"rating.initiatorLike\" must be null').to.eql(null);",
+                  "});",
+                  "pm.test(\"Test rating 'initiatorId' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('initiatorId');",
+                  "    pm.expect(jsonData.initiatorId, '\"initiatorId\" must be null').to.eql(null);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/events/:eventId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "events",
+                ":eventId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "2"
+                },
+                {
+                  "key": "eventId",
+                  "value": "1"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "like"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "201 CREATE LIKE user 3, event 1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([201]);",
+                  "});",
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "pm.test(\"Test rating 'id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('id');",
+                  "    pm.expect(jsonData.id, '\"id\" must be 2').to.eql(2);",
+                  "});",
+                  "pm.test(\"Test rating 'userId' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('userId');",
+                  "    pm.expect(jsonData.userId, '\"userId\" must be 3').to.eql(3);",
+                  "});",
+                  "pm.test(\"Test rating 'eventId' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('eventId');",
+                  "    pm.expect(jsonData.eventId, '\"eventId\" must be 1').to.eql(1);",
+                  "});",
+                  "pm.test(\"Test rating 'eventLike' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('eventLike');",
+                  "    pm.expect(jsonData.eventLike, '\"rating.eventLike\" must be true').to.eql(true);",
+                  "});",
+                  "pm.test(\"Test rating 'initiatorLike' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('initiatorLike');",
+                  "    pm.expect(jsonData.initiatorLike, '\"rating.initiatorLike\" must be null').to.eql(null);",
+                  "});",
+                  "pm.test(\"Test rating 'initiatorId' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('initiatorId');",
+                  "    pm.expect(jsonData.initiatorId, '\"initiatorId\" must be null').to.eql(null);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/events/:eventId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "events",
+                ":eventId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "3"
+                },
+                {
+                  "key": "eventId",
+                  "value": "1"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "like"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "201 CREATE LIKE user 4, event 1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([201]);",
+                  "});",
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "pm.test(\"Test rating 'id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('id');",
+                  "    pm.expect(jsonData.id, '\"id\" must be 3').to.eql(3);",
+                  "});",
+                  "pm.test(\"Test rating 'userId' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('userId');",
+                  "    pm.expect(jsonData.userId, '\"userId\" must be 4').to.eql(4);",
+                  "});",
+                  "pm.test(\"Test rating 'eventId' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('eventId');",
+                  "    pm.expect(jsonData.eventId, '\"eventId\" must be 1').to.eql(1);",
+                  "});",
+                  "pm.test(\"Test rating 'eventLike' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('eventLike');",
+                  "    pm.expect(jsonData.eventLike, '\"rating.eventLike\" must be true').to.eql(true);",
+                  "});",
+                  "pm.test(\"Test rating 'initiatorLike' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('initiatorLike');",
+                  "    pm.expect(jsonData.initiatorLike, '\"rating.initiatorLike\" must be null').to.eql(null);",
+                  "});",
+                  "pm.test(\"Test rating 'initiatorId' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('initiatorId');",
+                  "    pm.expect(jsonData.initiatorId, '\"initiatorId\" must be null').to.eql(null);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/events/:eventId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "events",
+                ":eventId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "4"
+                },
+                {
+                  "key": "eventId",
+                  "value": "1"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "like"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "201 CREATE DISLIKE user 4, event 2",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([201]);",
+                  "});",
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "pm.test(\"Test rating 'id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('id');",
+                  "    pm.expect(jsonData.id, '\"id\" must be 4').to.eql(4);",
+                  "});",
+                  "pm.test(\"Test rating 'userId' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('userId');",
+                  "    pm.expect(jsonData.userId, '\"userId\" must be 4').to.eql(4);",
+                  "});",
+                  "pm.test(\"Test rating 'eventId' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('eventId');",
+                  "    pm.expect(jsonData.eventId, '\"eventId\" must be 2').to.eql(2);",
+                  "});",
+                  "pm.test(\"Test rating 'eventLike' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('eventLike');",
+                  "    pm.expect(jsonData.eventLike, '\"rating.eventLike\" must be false').to.eql(false);",
+                  "});",
+                  "pm.test(\"Test rating 'initiatorLike' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('initiatorLike');",
+                  "    pm.expect(jsonData.initiatorLike, '\"rating.initiatorLike\" must be null').to.eql(null);",
+                  "});",
+                  "pm.test(\"Test rating 'initiatorId' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('initiatorId');",
+                  "    pm.expect(jsonData.initiatorId, '\"initiatorId\" must be null').to.eql(null);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/events/:eventId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "events",
+                ":eventId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "4"
+                },
+                {
+                  "key": "eventId",
+                  "value": "2"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "dislike"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "201 CREATE LIKE user 4, event 3",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([201]);",
+                  "});",
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "pm.test(\"Test rating 'id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('id');",
+                  "    pm.expect(jsonData.id, '\"id\" must be 5').to.eql(5);",
+                  "});",
+                  "pm.test(\"Test rating 'userId' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('userId');",
+                  "    pm.expect(jsonData.userId, '\"userId\" must be 4').to.eql(4);",
+                  "});",
+                  "pm.test(\"Test rating 'eventId' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('eventId');",
+                  "    pm.expect(jsonData.eventId, '\"eventId\" must be 3').to.eql(3);",
+                  "});",
+                  "pm.test(\"Test rating 'eventLike' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('eventLike');",
+                  "    pm.expect(jsonData.eventLike, '\"rating.eventLike\" must be true').to.eql(true);",
+                  "});",
+                  "pm.test(\"Test rating 'initiatorLike' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('initiatorLike');",
+                  "    pm.expect(jsonData.initiatorLike, '\"rating.initiatorLike\" must be null').to.eql(null);",
+                  "});",
+                  "pm.test(\"Test rating 'initiatorId' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('initiatorId');",
+                  "    pm.expect(jsonData.initiatorId, '\"initiatorId\" must be null').to.eql(null);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/events/:eventId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "events",
+                ":eventId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "4"
+                },
+                {
+                  "key": "eventId",
+                  "value": "3"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "like"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "400 FAIL CREATE INVALID USER PATH VARIABLE LIKE, event 2",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 400\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([400]);",
+                  "});",
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/events/:eventId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "events",
+                ":eventId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "userId"
+                },
+                {
+                  "key": "eventId",
+                  "value": "2"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "like"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "400 FAIL CREATE INVALID EVENT PATH VARIABLE LIKE, event 2",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 400\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([400]);",
+                  "});",
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/events/:eventId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "events",
+                ":eventId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "2"
+                },
+                {
+                  "key": "eventId",
+                  "value": "eventId"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "like"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "400 FAIL CREATE INVALID ENUM TYPE LIKE OR DISLIKE, user 2, event 1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 400\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([400]);",
+                  "});",
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/events/:eventId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "events",
+                ":eventId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "2"
+                },
+                {
+                  "key": "eventId",
+                  "value": "eventId"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "INVALID"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "404 FAIL CREATE NOT FOUND USER LIKE user 100, event 2",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 404\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([404]);",
+                  "});",
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/events/:eventId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "events",
+                ":eventId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "100"
+                },
+                {
+                  "key": "eventId",
+                  "value": "2"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "like"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "404 FAIL CREATE NOT FOUND EVENT LIKE user 2, event 100",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 404\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([404]);",
+                  "});",
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/events/:eventId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "events",
+                ":eventId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "2"
+                },
+                {
+                  "key": "eventId",
+                  "value": "100"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "like"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "409 FAIL CREATE DUPLICATE LIKE user 2, event 1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 409\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([409]);",
+                  "});",
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/events/:eventId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "events",
+                ":eventId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "2"
+                },
+                {
+                  "key": "eventId",
+                  "value": "1"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "like"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "409 FAIL CREATE DUPLICATE DISLIKE user 4, event 2",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 409\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([409]);",
+                  "});",
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/events/:eventId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "events",
+                ":eventId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "2"
+                },
+                {
+                  "key": "eventId",
+                  "value": "1"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "like"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "409 FAIL CREATE FROM INITIATOR LIKE user 1, event 2",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 409\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([409]);",
+                  "});",
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/events/:eventId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "events",
+                ":eventId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "1"
+                },
+                {
+                  "key": "eventId",
+                  "value": "2"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "like"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "409 FAIL CREATE FROM NOT PARTICIPANT LIKE user 2, event 2",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 409\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([409]);",
+                  "});",
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/events/:eventId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "events",
+                ":eventId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "2"
+                },
+                {
+                  "key": "eventId",
+                  "value": "2"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "like"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "409 FAIL CREATE NOT PUBLISHED EVENT LIKE user 2, event 4",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 409\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([409]);",
+                  "});",
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/events/:eventId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "events",
+                ":eventId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "2"
+                },
+                {
+                  "key": "eventId",
+                  "value": "4"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "like"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "400 FAIL DELETE INVALID USER PATH VARIABLE LIKE event 1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 400\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([400]);",
+                  "});",
+                  "pm.test(\"Has rating delete response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/events/:eventId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "events",
+                ":eventId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "userId"
+                },
+                {
+                  "key": "eventId",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "400 FAIL DELETE INVALID EVENT PATH VARIABLE LIKE user 2",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 400\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([400]);",
+                  "});",
+                  "pm.test(\"Has rating delete response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/events/:eventId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "events",
+                ":eventId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "1"
+                },
+                {
+                  "key": "eventId",
+                  "value": "eventId"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "404 FAIL DELETE NOT FOUND USER LIKE event 1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 404\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([404]);",
+                  "});",
+                  "pm.test(\"Has rating delete response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/events/:eventId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "events",
+                ":eventId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "100"
+                },
+                {
+                  "key": "eventId",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "404 FAIL DELETE NOT FOUND EVENT LIKE user 2",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 404\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([404]);",
+                  "});",
+                  "pm.test(\"Has rating delete response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/events/:eventId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "events",
+                ":eventId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "2"
+                },
+                {
+                  "key": "eventId",
+                  "value": "100"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "404 FAIL DELETE RATING NOT FOUND  user 5",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 404\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([404]);",
+                  "});",
+                  "pm.test(\"Has rating delete response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/events/:eventId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "events",
+                ":eventId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "5"
+                },
+                {
+                  "key": "eventId",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "204 DELETE LIKE user 2, event 1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 204\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([204]);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/events/:eventId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "events",
+                ":eventId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "2"
+                },
+                {
+                  "key": "eventId",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "RATE INITIATORS",
+      "item": [
+        {
+          "name": "CREATE LIKE user 2, initiator 1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([201]);",
+                  "});",
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "pm.test(\"Test rating 'id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('id');",
+                  "    pm.expect(jsonData.id, '\"id\" must be 8').to.eql(8);",
+                  "});",
+                  "pm.test(\"Test rating 'userId' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('userId');",
+                  "    pm.expect(jsonData.userId, '\"userId\" must be 2').to.eql(2);",
+                  "});",
+                  "pm.test(\"Test rating 'eventId' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('eventId');",
+                  "    pm.expect(jsonData.eventId, '\"eventId\" must be null').to.eql(null);",
+                  "});",
+                  "pm.test(\"Test rating 'eventLike' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('eventLike');",
+                  "    pm.expect(jsonData.eventLike, '\"rating.eventLike\" must be null').to.eql(null);",
+                  "});",
+                  "pm.test(\"Test rating 'initiatorLike' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('initiatorLike');",
+                  "    pm.expect(jsonData.initiatorLike, '\"rating.initiatorLike\" must be true').to.eql(true);",
+                  "});",
+                  "pm.test(\"Test rating 'initiatorId' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('initiatorId');",
+                  "    pm.expect(jsonData.initiatorId, '\"initiatorId\" must be 1').to.eql(1);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/users/:initiatorId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "users",
+                ":initiatorId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "2"
+                },
+                {
+                  "key": "initiatorId",
+                  "value": "1"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "like"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CREATE LIKE user 3, initiator 1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([201]);",
+                  "});",
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "pm.test(\"Test rating 'id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('id');",
+                  "    pm.expect(jsonData.id, '\"id\" must be 9').to.eql(9);",
+                  "});",
+                  "pm.test(\"Test rating 'userId' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('userId');",
+                  "    pm.expect(jsonData.userId, '\"userId\" must be 3').to.eql(3);",
+                  "});",
+                  "pm.test(\"Test rating 'eventId' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('eventId');",
+                  "    pm.expect(jsonData.eventId, '\"eventId\" must be null').to.eql(null);",
+                  "});",
+                  "pm.test(\"Test rating 'eventLike' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('eventLike');",
+                  "    pm.expect(jsonData.eventLike, '\"rating.eventLike\" must be null').to.eql(null);",
+                  "});",
+                  "pm.test(\"Test rating 'initiatorLike' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('initiatorLike');",
+                  "    pm.expect(jsonData.initiatorLike, '\"rating.initiatorLike\" must be true').to.eql(true);",
+                  "});",
+                  "pm.test(\"Test rating 'initiatorId' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('initiatorId');",
+                  "    pm.expect(jsonData.initiatorId, '\"initiatorId\" must be 1').to.eql(1);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/users/:initiatorId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "users",
+                ":initiatorId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "3"
+                },
+                {
+                  "key": "initiatorId",
+                  "value": "1"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "like"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CREATE DISLIKE user 4, initiator 1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([201]);",
+                  "});",
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "pm.test(\"Test rating 'id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('id');",
+                  "    pm.expect(jsonData.id, '\"id\" must be 10').to.eql(10);",
+                  "});",
+                  "pm.test(\"Test rating 'userId' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('userId');",
+                  "    pm.expect(jsonData.userId, '\"userId\" must be 4').to.eql(4);",
+                  "});",
+                  "pm.test(\"Test rating 'eventId' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('eventId');",
+                  "    pm.expect(jsonData.eventId, '\"eventId\" must be null').to.eql(null);",
+                  "});",
+                  "pm.test(\"Test rating 'eventLike' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('eventLike');",
+                  "    pm.expect(jsonData.eventLike, '\"rating.eventLike\" must be null').to.eql(null);",
+                  "});",
+                  "pm.test(\"Test rating 'initiatorLike' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('initiatorLike');",
+                  "    pm.expect(jsonData.initiatorLike, '\"rating.initiatorLike\" must be false').to.eql(false);",
+                  "});",
+                  "pm.test(\"Test rating 'initiatorId' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('initiatorId');",
+                  "    pm.expect(jsonData.initiatorId, '\"initiatorId\" must be 1').to.eql(1);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/users/:initiatorId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "users",
+                ":initiatorId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "4"
+                },
+                {
+                  "key": "initiatorId",
+                  "value": "1"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "dislike"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "400 FAIL CREATE INVALID USER PATH VARIABLE LIKE, initiator 1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 400\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([400]);",
+                  "});",
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/users/:initiatorId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "users",
+                ":initiatorId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "userId"
+                },
+                {
+                  "key": "initiatorId",
+                  "value": "1"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "like"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "400 FAIL CREATE INVALID INITIATOR PATH VARIABLE LIKE, user 2",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 400\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([400]);",
+                  "});",
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/users/:initiatorId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "users",
+                ":initiatorId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "2"
+                },
+                {
+                  "key": "initiatorId",
+                  "value": "initiatorId"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "like"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "400 FAIL CREATE INVALID ENUM TYPE LIKE OR DISLIKE, user 2, initiator 1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 400\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([400]);",
+                  "});",
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/users/:initiatorId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "users",
+                ":initiatorId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "2"
+                },
+                {
+                  "key": "initiatorId",
+                  "value": "initiatorId"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "INVALID"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "404 FAIL CREATE NOT FOUND USER LIKE user 100, initiator 1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 404\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([404]);",
+                  "});",
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/users/:initiatorId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "users",
+                ":initiatorId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "100"
+                },
+                {
+                  "key": "initiatorId",
+                  "value": "1"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "like"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "404 FAIL CREATE NOT FOUND EVENT LIKE user 2, initiator 100",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 404\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([404]);",
+                  "});",
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/users/:initiatorId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "users",
+                ":initiatorId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "2"
+                },
+                {
+                  "key": "initiatorId",
+                  "value": "100"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "like"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "409 FAIL CREATE DUPLICATE LIKE user 2, initiator 1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 409\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([409]);",
+                  "});",
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/users/:initiatorId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "users",
+                ":initiatorId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "2"
+                },
+                {
+                  "key": "initiatorId",
+                  "value": "1"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "like"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "409 FAIL CREATE DUPLICATE DISLIKE user 4, event 2",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 409\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([409]);",
+                  "});",
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/users/:initiatorId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "users",
+                ":initiatorId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "2"
+                },
+                {
+                  "key": "initiatorId",
+                  "value": "1"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "like"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "409 FAIL CREATE FROM HIMSELF LIKE user 1, initiator 1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 409\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([409]);",
+                  "});",
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/users/:initiatorId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "users",
+                ":initiatorId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "1"
+                },
+                {
+                  "key": "initiatorId",
+                  "value": "2"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "like"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "409 FAIL CREATE FROM NOT PARTICIPANT LIKE user 5, initiator 1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 409\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([409]);",
+                  "});",
+                  "pm.test(\"Has rating create response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/users/:initiatorId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "users",
+                ":initiatorId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "5"
+                },
+                {
+                  "key": "initiatorId",
+                  "value": "2"
+                }
+              ],
+              "query": [
+                {
+                  "key": "rating",
+                  "value": "like"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "400 FAIL DELETE INVALID USER PATH VARIABLE LIKE initiator 1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 400\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([400]);",
+                  "});",
+                  "pm.test(\"Has rating delete response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/users/:initiatorId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "users",
+                ":initiatorId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "userId"
+                },
+                {
+                  "key": "initiatorId",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "400 FAIL DELETE INVALID INITIATOR PATH VARIABLE LIKE user 2",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 400\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([400]);",
+                  "});",
+                  "pm.test(\"Has rating delete response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/users/:initiatorId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "users",
+                ":initiatorId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "1"
+                },
+                {
+                  "key": "initiatorId",
+                  "value": "initiatorId"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "404 FAIL DELETE NOT FOUND USER LIKE initiator 1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 404\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([404]);",
+                  "});",
+                  "pm.test(\"Has rating delete response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/users/:initiatorId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "users",
+                ":initiatorId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "100"
+                },
+                {
+                  "key": "initiatorId",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "404 FAIL DELETE NOT FOUND EVENT LIKE user 2",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 404\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([404]);",
+                  "});",
+                  "pm.test(\"Has rating delete response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/users/:initiatorId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "users",
+                ":initiatorId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "2"
+                },
+                {
+                  "key": "initiatorId",
+                  "value": "100"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "404 FAIL DELETE NOT FOUND RATING LIKE user 5",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 404\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([404]);",
+                  "});",
+                  "pm.test(\"Has rating delete response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/users/:initiatorId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "users",
+                ":initiatorId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "5"
+                },
+                {
+                  "key": "initiatorId",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE DISLIKE User 4 Initiator 1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 204\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([204]);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/ratings/:userId/users/:initiatorId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                ":userId",
+                "users",
+                ":initiatorId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "4"
+                },
+                {
+                  "key": "initiatorId",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "GET EVENTS WITH RATING",
+      "item": [
+        {
+          "name": "EVENT 1 GET THREE LIKES, DELETED ONE AND AND HAS RATING 2",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.be.ok;",
+                  "});",
+                  "pm.test(\"Has event update response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "pm.test(\"Test event 'id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('id');",
+                  "    pm.expect(jsonData.id, '\"id\" must be 1').to.eql(1);",
+                  "});",
+                  "pm.test(\"Test event 'annotation' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('annotation');",
+                  "    pm.expect(jsonData.annotation, '\"annotation\" must be \"This is a valid annotation\"').to.eql('This is a valid annotation');",
+                  "});",
+                  "pm.test(\"Test event 'category.id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('category');",
+                  "    pm.expect(jsonData.category).to.have.property('id');",
+                  "    pm.expect(jsonData.category.id, '\"category.id\" must be 1').to.eql(1);",
+                  "});",
+                  "pm.test(\"Test event 'category.name' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('category');",
+                  "    pm.expect(jsonData.category).to.have.property('name');",
+                  "    pm.expect(jsonData.category.name, '\"category.name\" must be \"Festival\"').to.eql('Festival');",
+                  "});",
+                  "pm.test(\"Test event 'description' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('description');",
+                  "    pm.expect(jsonData.description, '\"description\" must be \"This is a valid description\"').to.eql('This is a valid description');",
+                  "});",
+                  "pm.test(\"Test event 'eventDate' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('eventDate');",
+                  "    pm.expect(jsonData.eventDate, '\"eventDate\" must be \"' + pm.environment.get('time1') + '\"').to.eql(pm.environment.get('time1'));",
+                  "});",
+                  "pm.test(\"Test event 'location.lat' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('location');",
+                  "    pm.expect(jsonData.location).to.have.property('lat');",
+                  "    pm.expect(jsonData.location.lat, '\"location.lat\" must be 33.33').to.eql(33.33);",
+                  "});",
+                  "pm.test(\"Test event 'location.lon' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('location');",
+                  "    pm.expect(jsonData.location).to.have.property('lon');",
+                  "    pm.expect(jsonData.location.lon, '\"location.lon\" must be 77.77').to.eql(77.77);",
+                  "});",
+                  "pm.test(\"Test event 'title' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('title');",
+                  "    pm.expect(jsonData.title, '\"title\" must be \"title\"').to.eql('title');",
+                  "});",
+                  "pm.test(\"Test event 'rating' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('rating');",
+                  "    pm.expect(jsonData.rating, '\"rating\" must be 2').to.eql(2);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/users/:userId/events/:eventId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users",
+                ":userId",
+                "events",
+                ":eventId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "1"
+                },
+                {
+                  "key": "eventId",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "EVENT 2 GET ONE DISLIKE AND HAS RATING -1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.be.ok;",
+                  "});",
+                  "pm.test(\"Has event update response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "pm.test(\"Test event 'id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('id');",
+                  "    pm.expect(jsonData.id, '\"id\" must be 2').to.eql(2);",
+                  "});",
+                  "pm.test(\"Test event 'annotation' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('annotation');",
+                  "    pm.expect(jsonData.annotation, '\"annotation\" must be \"This is a valid annotation2\"').to.eql('This is a valid annotation2');",
+                  "});",
+                  "pm.test(\"Test event 'category.id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('category');",
+                  "    pm.expect(jsonData.category).to.have.property('id');",
+                  "    pm.expect(jsonData.category.id, '\"category.id\" must be 1').to.eql(1);",
+                  "});",
+                  "pm.test(\"Test event 'category.name' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('category');",
+                  "    pm.expect(jsonData.category).to.have.property('name');",
+                  "    pm.expect(jsonData.category.name, '\"category.name\" must be \"Festival\"').to.eql('Festival');",
+                  "});",
+                  "pm.test(\"Test event 'description' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('description');",
+                  "    pm.expect(jsonData.description, '\"description\" must be \"This is a valid description2\"').to.eql('This is a valid description2');",
+                  "});",
+                  "pm.test(\"Test event 'eventDate' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('eventDate');",
+                  "    pm.expect(jsonData.eventDate, '\"eventDate\" must be \"' + pm.environment.get('time2') + '\"').to.eql(pm.environment.get('time2'));",
+                  "});",
+                  "pm.test(\"Test event 'location.lat' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('location');",
+                  "    pm.expect(jsonData.location).to.have.property('lat');",
+                  "    pm.expect(jsonData.location.lat, '\"location.lat\" must be 33.33').to.eql(33.33);",
+                  "});",
+                  "pm.test(\"Test event 'location.lon' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('location');",
+                  "    pm.expect(jsonData.location).to.have.property('lon');",
+                  "    pm.expect(jsonData.location.lon, '\"location.lon\" must be 77.77').to.eql(77.77);",
+                  "});",
+                  "pm.test(\"Test event 'title' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('title');",
+                  "    pm.expect(jsonData.title, '\"title\" must be \"title2\"').to.eql('title2');",
+                  "});",
+                  "pm.test(\"Test event 'rating' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('rating');",
+                  "    pm.expect(jsonData.rating, '\"rating\" must be -1').to.eql(-1);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/users/:userId/events/:eventId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users",
+                ":userId",
+                "events",
+                ":eventId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "1"
+                },
+                {
+                  "key": "eventId",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "EVENT 3 GET ONE LIKE AND HAS RATING 1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.be.ok;",
+                  "});",
+                  "pm.test(\"Has event update response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "pm.test(\"Test event 'id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('id');",
+                  "    pm.expect(jsonData.id, '\"id\" must be 3').to.eql(3);",
+                  "});",
+                  "pm.test(\"Test event 'annotation' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('annotation');",
+                  "    pm.expect(jsonData.annotation, '\"annotation\" must be \"This is a valid annotation3\"').to.eql('This is a valid annotation3');",
+                  "});",
+                  "pm.test(\"Test event 'category.id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('category');",
+                  "    pm.expect(jsonData.category).to.have.property('id');",
+                  "    pm.expect(jsonData.category.id, '\"category.id\" must be 1').to.eql(1);",
+                  "});",
+                  "pm.test(\"Test event 'category.name' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('category');",
+                  "    pm.expect(jsonData.category).to.have.property('name');",
+                  "    pm.expect(jsonData.category.name, '\"category.name\" must be \"Festival\"').to.eql('Festival');",
+                  "});",
+                  "pm.test(\"Test event 'description' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('description');",
+                  "    pm.expect(jsonData.description, '\"description\" must be \"This is a valid description3\"').to.eql('This is a valid description3');",
+                  "});",
+                  "pm.test(\"Test event 'eventDate' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('eventDate');",
+                  "    pm.expect(jsonData.eventDate, '\"eventDate\" must be \"' + pm.environment.get('time3') + '\"').to.eql(pm.environment.get('time3'));",
+                  "});",
+                  "pm.test(\"Test event 'location.lat' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('location');",
+                  "    pm.expect(jsonData.location).to.have.property('lat');",
+                  "    pm.expect(jsonData.location.lat, '\"location.lat\" must be 33.33').to.eql(33.33);",
+                  "});",
+                  "pm.test(\"Test event 'location.lon' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('location');",
+                  "    pm.expect(jsonData.location).to.have.property('lon');",
+                  "    pm.expect(jsonData.location.lon, '\"location.lon\" must be 77.77').to.eql(77.77);",
+                  "});",
+                  "pm.test(\"Test event 'title' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('title');",
+                  "    pm.expect(jsonData.title, '\"title\" must be \"title3\"').to.eql('title3');",
+                  "});",
+                  "pm.test(\"Test event 'rating' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('rating');",
+                  "    pm.expect(jsonData.rating, '\"rating\" must be 1').to.eql(1);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/users/:userId/events/:eventId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users",
+                ":userId",
+                "events",
+                ":eventId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "1"
+                },
+                {
+                  "key": "eventId",
+                  "value": "3"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "EVENT 4 GET NO LIKES OR DISLIKES AND HAD RATING 0",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.be.ok;",
+                  "});",
+                  "pm.test(\"Has event update response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "pm.test(\"Test event 'id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('id');",
+                  "    pm.expect(jsonData.id, '\"id\" must be 4').to.eql(4);",
+                  "});",
+                  "pm.test(\"Test event 'annotation' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('annotation');",
+                  "    pm.expect(jsonData.annotation, '\"annotation\" must be \"This is a valid annotation4\"').to.eql('This is a valid annotation4');",
+                  "});",
+                  "pm.test(\"Test event 'category.id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('category');",
+                  "    pm.expect(jsonData.category).to.have.property('id');",
+                  "    pm.expect(jsonData.category.id, '\"category.id\" must be 1').to.eql(1);",
+                  "});",
+                  "pm.test(\"Test event 'category.name' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('category');",
+                  "    pm.expect(jsonData.category).to.have.property('name');",
+                  "    pm.expect(jsonData.category.name, '\"category.name\" must be \"Festival\"').to.eql('Festival');",
+                  "});",
+                  "pm.test(\"Test event 'description' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('description');",
+                  "    pm.expect(jsonData.description, '\"description\" must be \"This is a valid description4\"').to.eql('This is a valid description4');",
+                  "});",
+                  "pm.test(\"Test event 'eventDate' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('eventDate');",
+                  "    pm.expect(jsonData.eventDate, '\"eventDate\" must be \"' + pm.environment.get('time4') + '\"').to.eql(pm.environment.get('time4'));",
+                  "});",
+                  "pm.test(\"Test event 'location.lat' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('location');",
+                  "    pm.expect(jsonData.location).to.have.property('lat');",
+                  "    pm.expect(jsonData.location.lat, '\"location.lat\" must be 33.33').to.eql(33.33);",
+                  "});",
+                  "pm.test(\"Test event 'location.lon' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('location');",
+                  "    pm.expect(jsonData.location).to.have.property('lon');",
+                  "    pm.expect(jsonData.location.lon, '\"location.lon\" must be 77.77').to.eql(77.77);",
+                  "});",
+                  "pm.test(\"Test event 'title' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('title');",
+                  "    pm.expect(jsonData.title, '\"title\" must be \"title4\"').to.eql('title4');",
+                  "});",
+                  "pm.test(\"Test event 'rating' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('rating');",
+                  "    pm.expect(jsonData.rating, '\"rating\" must be 0').to.eql(0);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/users/:userId/events/:eventId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users",
+                ":userId",
+                "events",
+                ":eventId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "1"
+                },
+                {
+                  "key": "eventId",
+                  "value": "4"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "GET SORTED PUBLISHED EVENTS WITH RATING",
+      "item": [
+        {
+          "name": "LIST HAS 3 ITEMS, id : rating (1 : 2, 3 : 1, 2 : -1)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.be.ok;",
+                  "});",
+                  "pm.test(\"Test list sorted events response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.length, 'List length must be 3').to.eql(3);",
+                  "});",
+                  "",
+                  "pm.test(\"Test events[0] 'id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData[0]).to.have.property('id');",
+                  "    pm.expect(jsonData[0].id, '\"id\" must be 1').to.eql(1);",
+                  "});",
+                  "pm.test(\"Test events[0] 'rating' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData[0]).to.have.property('rating');",
+                  "    pm.expect(jsonData[0].rating, '\"rating\" must be 2').to.eql(2);",
+                  "});",
+                  "pm.test(\"Test events[1] 'id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData[1]).to.have.property('id');",
+                  "    pm.expect(jsonData[1].id, '\"id\" must be 3').to.eql(3);",
+                  "});",
+                  "pm.test(\"Test events[1] 'rating' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData[1]).to.have.property('rating');",
+                  "    pm.expect(jsonData[1].rating, '\"rating\" must be 1').to.eql(1);",
+                  "});",
+                  "pm.test(\"Test events[2] 'id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData[2]).to.have.property('id');",
+                  "    pm.expect(jsonData[2].id, '\"id\" must be 2').to.eql(2);",
+                  "});",
+                  "pm.test(\"Test events[2] 'rating' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData[2]).to.have.property('rating');",
+                  "    pm.expect(jsonData[2].rating, '\"rating\" must be -1').to.eql(-1);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/ratings/events",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                "events"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "GET USERS WITH RATING",
+      "item": [
+        {
+          "name": "LIST OF FIVE USERS, FIRST HAS RATING 2",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.be.ok;",
+                  "});",
+                  "pm.test(\"Test list users response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.length, 'List length must be 5').to.eql(5);",
+                  "});",
+                  "",
+                  "pm.test(\"Test user[0] 'id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData[0]).to.have.property('id');",
+                  "    pm.expect(jsonData[0].id, '\"id\" must be 1').to.eql(1);",
+                  "});",
+                  "pm.test(\"Test user[0] 'rating' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData[0]).to.have.property('rating');",
+                  "    pm.expect(jsonData[0].rating, '\"id\" must be 2').to.eql(2);",
+                  "});",
+                  "pm.test(\"Test user[1] 'rating' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData[1]).to.have.property('rating');",
+                  "    pm.expect(jsonData[1].rating, '\"id\" must be 0').to.eql(0);",
+                  "});",
+                  "pm.test(\"Test user[2] 'rating' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData[0]).to.have.property('rating');",
+                  "    pm.expect(jsonData[2].rating, '\"id\" must be 0').to.eql(0);",
+                  "});",
+                  "pm.test(\"Test user[3] 'rating' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData[3]).to.have.property('rating');",
+                  "    pm.expect(jsonData[3].rating, '\"id\" must be ').to.eql(0);",
+                  "});",
+                  "pm.test(\"Test user[4] 'rating' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData[4]).to.have.property('rating');",
+                  "    pm.expect(jsonData[4].rating, '\"id\" must be 0').to.eql(0);",
+                  "});"
+
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/admin/users",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "admin",
+                "users"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "GET SORTED USERS WITH RATING",
+      "item": [
+        {
+          "name": "LIST HAS FIVE ITEMS, id : rating (1 : 2, rest of users has zero rating)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.be.ok;",
+                  "});",
+                  "pm.test(\"Test list users response\", function () {",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.length, 'List length must be 5').to.eql(5);",
+                  "});",
+                  "",
+                  "pm.test(\"Test user[0] 'id' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData[0]).to.have.property('id');",
+                  "    pm.expect(jsonData[0].id, '\"id\" must be 1').to.eql(1);",
+                  "});",
+                  "pm.test(\"Test user[0] 'name' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData[0]).to.have.property('name');",
+                  "    pm.expect(jsonData[0].name, '\"name\" must be \"ALEX\"').to.eql('ALEX');",
+                  "});",
+                  "pm.test(\"Test user[0] 'rating' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData[0]).to.have.property('rating');",
+                  "    pm.expect(jsonData[0].rating, '\"rating\" must be 2').to.eql(2);",
+                  "});",
+                  "pm.test(\"Test user[1] 'rating' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData[1]).to.have.property('rating');",
+                  "    pm.expect(jsonData[1].rating, '\"rating\" must be 0').to.eql(0);",
+                  "});",
+                  "pm.test(\"Test user[2] 'rating' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData[2]).to.have.property('rating');",
+                  "    pm.expect(jsonData[2].rating, '\"rating\" must be 0').to.eql(0);",
+                  "});",
+                  "pm.test(\"Test user[3] 'rating' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData[3]).to.have.property('rating');",
+                  "    pm.expect(jsonData[3].rating, '\"rating\" must be ').to.eql(0);",
+                  "});",
+                  "pm.test(\"Test user[4] 'rating' field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData[4]).to.have.property('rating');",
+                  "    pm.expect(jsonData[4].rating, '\"rating\" must be 0').to.eql(0);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/ratings/users",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ratings",
+                "users"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    }
+  ]
+}
+
+
+
+
+

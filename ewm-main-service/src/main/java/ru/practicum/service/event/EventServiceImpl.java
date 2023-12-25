@@ -104,6 +104,21 @@ public class EventServiceImpl implements EventService {
         return result;
     }
 
+    /**
+     * Get events sorted by rating
+     * Only published events should appear in the results
+     *
+     * @param from number of elements that need to be skipped to form the current page, default value = 10
+     * @param size number of elements per page, default value = 10
+     * @return List of events
+     */
+    @Override
+    public List<EventFullDto> getEventsByRating(Integer from, Integer size) {
+        List<Event> events = eventRepository.findAllByStateOrderByRatingDesc(
+                EventState.PUBLISHED.name(), Paging.getPageable(from, size));
+        ListLogger.logResultList(events);
+        return EventMapper.toEventFullDtoList(events);
+    }
 
     /**
      * Get events with filtering options for public access.

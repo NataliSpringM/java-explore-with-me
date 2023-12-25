@@ -8,6 +8,7 @@ public class ErrorConstants {
      * Error messages
      */
     public static final String UNKNOWN_SORT_TYPE = "Unknown SortType value:";
+    public static final String UNKNOWN_RATING_ACTION = "Unknown RatingAction value:";
     public static final String UNKNOWN_EVENT_STATE = "Unknown EventState value:";
     public static final String UNKNOWN_ACTION = "Unknown StateAction value:";
 
@@ -23,8 +24,10 @@ public class ErrorConstants {
     public static final String TIME_IS_LESS_THAN_TWO_HOUR_BEFORE_START = "Time limit violation:"
             + " it is less than two hours before event starts";
     public static final String ONLY_FOR_INITIATOR = "Access is allowed only for the initiator of the event";
+    public static final String ONLY_FOR_PARTICIPANT = "Access is allowed only for the participant of the event";
 
     public static final String NOT_FOR_INITIATOR = "Access is not allowed for the initiator of the event";
+    public static final String NOT_FOR_HIMSELF = "Access is not allowed";
 
     public static final String LIMIT = "Participation limit has been reached";
     public static final String ONLY_FOR_REQUESTER = "Access is allowed only for the requester";
@@ -55,6 +58,12 @@ public class ErrorConstants {
             + "SQL [n/a]; constraint [uq_compilation_title]; "
             + "nested exception is org.hibernate.exception.ConstraintViolationException: "
             + "could not execute statement";
+
+    public static final String RATING_UNIQUE_VIOLATION = "could not execute statement; "
+            + "SQL [n/a]; constraint [uq_like]; "
+            + "nested exception is org.hibernate.exception.ConstraintViolationException: "
+            + "could not execute statement";
+
 
     public static String getNotFoundMessage(String name, Number id) {
         return name + " with id=" + id + " was not found";

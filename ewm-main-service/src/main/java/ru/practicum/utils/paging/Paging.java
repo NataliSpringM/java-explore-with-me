@@ -6,7 +6,7 @@ import org.springframework.data.domain.Sort;
 import ru.practicum.enums.SortType;
 
 /**
- * constuct Pageable objects methods
+ * construct Pageable objects methods
  */
 public class Paging {
 

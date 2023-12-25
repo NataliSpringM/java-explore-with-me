@@ -1,8 +1,6 @@
 package ru.practicum.dto.request;
 
-import lombok.Builder;
-import lombok.RequiredArgsConstructor;
-import lombok.Value;
+import lombok.*;
 
 import java.util.List;
 
@@ -12,11 +10,12 @@ import java.util.List;
  * (created, requestId, requester, status)
  * List<ParticipationRequestDto> rejectedRequests. List of the rejected requests
  */
-@Value
+@Data
 @Builder(toBuilder = true)
-@RequiredArgsConstructor
+@NoArgsConstructor
+@AllArgsConstructor
 public class EventRequestStatusUpdateResult {
-    List<ParticipationRequestDto> confirmedRequests;
-    List<ParticipationRequestDto> rejectedRequests;
+    private List<ParticipationRequestDto> confirmedRequests;
+    private List<ParticipationRequestDto> rejectedRequests;
 
 }

@@ -17,9 +17,9 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class NewCompilationDto {
-    List<Long> events;
+    private List<Long> events;
     @Size(min = 1, max = 50)
     @NotBlank
-    String title;
-    Boolean pinned;
+    private String title;
+    private Boolean pinned;
 }
