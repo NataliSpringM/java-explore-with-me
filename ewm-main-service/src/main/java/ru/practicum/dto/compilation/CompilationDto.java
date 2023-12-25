@@ -20,10 +20,10 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CompilationDto {
-    Integer id;
-    List<EventShortDto> events;
-    String title;
-    Boolean pinned;
+    private Integer id;
+    private List<EventShortDto> events;
+    private String title;
+    private Boolean pinned;
 }
 
 

@@ -48,5 +48,5 @@ public class UpdateEventUserRequest extends UpdateEventRequest {
     private Boolean requestModeration;
     private StateAction stateAction;
     @Size(min = 3, max = 120)
-    String title;
+    private String title;
 }

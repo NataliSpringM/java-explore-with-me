@@ -20,7 +20,6 @@ import static ru.practicum.utils.constants.Constants.DATE_TIME_FORMAT;
  * String annotation. Event annotation, must not be blank, min length = 20, max length = 2000
  * Integer category. ID of the category to which the event belongs
  * String description. Full event description.
- * Integer confirmedRequests. Number of approved requests for participation in this event
  * LocalDateTime eventDate. Date and time for which the event is scheduled ("yyyy-MM-dd HH:mm:ss")
  * Location LocationDto. Latitude and longitude of the event LocationDto.
  * Boolean paid. Equals true if participation is paid
@@ -50,5 +49,5 @@ public class NewEventDto {
     private Integer participantLimit;
     private Boolean requestModeration;
     @Size(min = 3, max = 120)
-    String title;
+    private String title;
 }

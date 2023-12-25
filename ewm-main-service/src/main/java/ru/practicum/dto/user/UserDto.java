@@ -14,7 +14,8 @@ import lombok.*;
 @AllArgsConstructor
 @Builder(toBuilder = true)
 public class UserDto {
-    Long id;
-    String name;
-    String email;
+    private Long id;
+    private String name;
+    private String email;
+    private Long rating;
 }

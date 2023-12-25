@@ -90,6 +90,20 @@ public class UserServiceImpl implements UserService {
     }
 
     /**
+     * Get users, sorted by rating with paging options
+     *
+     * @param from number of elements that need to be skipped to form the current page, default value = 10
+     * @param size number of elements per page, default value = 10
+     * @return list of users
+     */
+    @Override
+    public List<UserDto> getInitiatorsByRating(Integer from, Integer size) {
+        List<User> users = userRepository.findAllByOrderByRatingDesc(Paging.getPageable(from, size));
+        ListLogger.logResultList(users);
+        return UserMapper.toUserDtoList(users);
+    }
+
+    /**
      * get User from repository by id or throw NotFoundException
      *
      * @param userId user ID

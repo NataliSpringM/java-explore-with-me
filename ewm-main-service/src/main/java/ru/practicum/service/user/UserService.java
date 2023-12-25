@@ -39,4 +39,12 @@ public interface UserService {
      */
     UserDto deleteUser(Long userId);
 
+    /**
+     * Get users, sorted by rating with paging options
+     *
+     * @param from number of elements that need to be skipped to form the current page, default value = 10
+     * @param size number of elements per page, default value = 10
+     * @return list of users
+     */
+    List<UserDto> getInitiatorsByRating(Integer from, Integer size);
 }

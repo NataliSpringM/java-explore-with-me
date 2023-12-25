@@ -31,5 +31,8 @@ public class User {
 
     @Column(name = "email", nullable = false, unique = true, length = 254)
     private String email;
+
+    @Column(name = "rating")
+    private Long rating;
 }
 

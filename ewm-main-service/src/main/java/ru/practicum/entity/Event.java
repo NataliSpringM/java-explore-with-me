@@ -79,6 +79,9 @@ public class Event {
     @Column(name = "published_on")
     private LocalDateTime publishedOn;
 
+    @Column(name = "rating")
+    private Long rating;
+
     @Column(name = "request_moderation")
     @ColumnDefault("true")
     private Boolean requestModeration;

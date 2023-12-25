@@ -44,4 +44,24 @@ public interface RequestRepository extends JpaRepository<Request, Long> {
      * @return list of requests
      */
     List<Request> findALlByStatusAndEventId(RequestStatus status, Long eventId);
+
+    /**
+     * check existing a confirmed participation request from user
+     *
+     * @param userId  user ID
+     * @param eventId event ID
+     * @param status  Request status
+     * @return true if such a request exists
+     */
+
+    boolean existsByRequester_IdAndEvent_IdAndStatus(Long userId, Long eventId, RequestStatus status);
+
+    /**
+     * get requests by requester id and status
+     *
+     * @param userId user ID
+     * @param status Request status
+     * @return list of requests
+     */
+    List<Request> findAllByRequester_IdAndStatus(Long userId, RequestStatus status);
 }

@@ -75,7 +75,7 @@ public class EventPrivateController {
                                  @Valid @RequestBody NewEventDto event) {
         log.info("POST-request to the endpoint \"/users/{}/events\".\n"
                 + "EVENTS. PRIVATE ACCESS.\n"
-                + "An attempt is made to add an event {} by user {}.", userId, event.getTitle(), userId);
+                + "An attempt is made to add an event {} by user {}.", userId, event, userId);
         return eventService.addEvent(userId, event);
     }
 

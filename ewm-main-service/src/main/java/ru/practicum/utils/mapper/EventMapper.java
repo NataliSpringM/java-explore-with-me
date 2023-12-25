@@ -40,6 +40,7 @@ public class EventMapper {
                 .initiator(initiator)
                 .location(location)
                 .state(EventState.PENDING.name())
+                .rating(0L)
                 .views(0L)
                 .build();
     }
@@ -58,17 +59,14 @@ public class EventMapper {
                 .location(event.getLocation())
                 .paid(event.getPaid())
                 .eventDate(event.getEventDate())
-                .createdOn(event.getCreatedOn()//.format(DateTimeFormatter.DATE_TIME_FORMATTER)
-                )
-                .publishedOn(
-                        event.getPublishedOn() == null ? null : event.getPublishedOn()
-                        //.format(DateTimeFormatter.DATE_TIME_FORMATTER)
-                )
+                .createdOn(event.getCreatedOn())
+                .publishedOn(event.getPublishedOn() == null ? null : event.getPublishedOn())
                 .participantLimit(event.getParticipantLimit())
                 .requestModeration(event.getRequestModeration())
                 .confirmedRequests(event.getConfirmedRequests())
                 .state(EventState.valueOf(event.getState()))
                 .views(event.getViews())
+                .rating(event.getRating())
                 .build();
     }
 
@@ -84,6 +82,7 @@ public class EventMapper {
                 .category(CategoryMapper.toCategoryDto(event.getCategory()))
                 .paid(event.getPaid())
                 .eventDate(event.getEventDate())
+                .rating(event.getRating())
                 .build();
     }
 

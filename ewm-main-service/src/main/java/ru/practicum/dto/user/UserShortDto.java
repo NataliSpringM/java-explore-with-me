@@ -12,6 +12,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserShortDto {
-    Long id;
-    String name;
+    private Long id;
+    private String name;
+    private Long rating;
 }

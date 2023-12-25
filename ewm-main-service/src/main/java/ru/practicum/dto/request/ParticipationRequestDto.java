@@ -26,12 +26,12 @@ import static ru.practicum.utils.constants.Constants.DATE_TIME_FORMAT;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ParticipationRequestDto {
-    Long id;
+    private Long id;
     @JsonProperty("created")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DATE_TIME_FORMAT)
-    LocalDateTime created;
-    Long event;
-    Long requester;
-    RequestStatus status;
+    private LocalDateTime created;
+    private Long event;
+    private Long requester;
+    private RequestStatus status;
 
 }

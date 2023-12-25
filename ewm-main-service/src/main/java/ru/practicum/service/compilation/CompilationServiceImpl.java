@@ -68,7 +68,7 @@ public class CompilationServiceImpl implements CompilationService {
     @Transactional
     public CompilationDto updateCompilation(Integer compId, UpdateCompilationRequest request) {
 
-        Compilation compilation = compilationRepository.getReferenceById(compId);
+        Compilation compilation = getCompilationOrThrowException(compId);
         List<Event> events;
 
         if (request.getPinned() != null) {

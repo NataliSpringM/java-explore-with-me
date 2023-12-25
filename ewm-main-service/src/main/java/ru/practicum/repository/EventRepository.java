@@ -126,5 +126,11 @@ public interface EventRepository extends JpaRepository<Event, Long> {
      */
     List<Event> findAllByIdIn(List<Long> ids);
 
-
+    /**
+     * find events sorted by rating with paging
+     *
+     * @param pageable paging parameters
+     * @return list of events
+     */
+    List<Event> findAllByStateOrderByRatingDesc(String state, Pageable pageable);
 }
